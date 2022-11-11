@@ -71,7 +71,7 @@ function M.setup(opts)
 end
 
 function M.load()
-  vim.api.nvim_command("colorscheme borealis")
+  vim.api.nvim_command('colorscheme borealis')
 end
 
 return M
