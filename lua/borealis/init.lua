@@ -1,9 +1,9 @@
 local M = {}
 
-M.styles = {
-  'dark',
-  'light'
-}
+-- M.styles = {
+--   'dark',
+--   'light'
+-- }
 
 ---Change borealis option (vim.g.borealis_config.option)
 ---@param opt string: option name
@@ -28,9 +28,7 @@ function M.colorscheme()
   elseif vim.g.borealis_config.style == "light" then
     M.set_option("style", "dark")
   end
-
   require("borealis.highlights").setup()
-
 end
 
 function M.toggle()
@@ -48,8 +46,8 @@ end
 
 local default_config = {
   style = "dark",
-  toggle_style_key = nil,
-  toggle_style_list = M.styles,
+  -- toggle_style_key = nil,
+  -- toggle_style_list = M.styles,
   transparent = false, -- transparent background
   term_colors = true, -- 24-bit terminal colors
   ending_tildes = false, -- show end of buffer ending_tildes
@@ -87,17 +85,17 @@ function M.setup(opts)
   if not vim.g.borealis_config or not vim.g.borealis_config.loaded then
     vim.g.borealis_config = vim.tbl_deep_extend("keep", vim.g.borealis_config or {}, default_config)
     M.set_option("loaded", true)
-    M.set_option("toggle_style_index", 0)
+    --M.set_option("toggle_style_index", 0)
   end
   if opts then
     vim.g.borealis_config = vim.tbl_deep_extend("force", vim.g.borealis_config, opts)
-    if opts.toggle_style_list then
-      M.set_option("toggle_style_list", opts.toggle_style_list)
-    end
+    --if opts.toggle_style_list then
+    --  M.set_option("toggle_style_list", opts.toggle_style_list)
+    --end
   end
-  if vim.g.borealis_config.toggle_style_key then
-    vim.api.nvim_set_keymap("n", vim.g.borealis_config.toggle_style_key, "<cmd>lua require('borealis').toggle()<CR>", { noremap = true, silent = true })
-  end
+  -- if vim.g.borealis_config.toggle_style_key then
+  --   vim.api.nvim_set_keymap("n", vim.g.borealis_config.toggle_style_key, "<cmd>lua require('borealis').toggle()<CR>", { noremap = true, silent = true })
+  -- end
 end
 
 function M.load()
