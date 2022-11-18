@@ -46,7 +46,7 @@ local default_config = {
   highlights = {},
 
   lualine = {
-    transparent = false,
+    transparent = true,
   },
 
   -- Plugins Related
