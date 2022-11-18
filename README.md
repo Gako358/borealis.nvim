@@ -3,6 +3,8 @@
 
 The theme is a personal theme, made inspired by **[Andromedia for VSCode](https://github.com/EliverLara/Andromeda)**.
 
+![borealis](https://github.com/Gako358/Dotfiles/blob/main/Pictures/Images/neovim.png)
+
 ## Installation
 ```
 use 'gako358/borealis.nvim'
