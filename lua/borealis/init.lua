@@ -1,5 +1,9 @@
 local M = {}
 
+M.styles = {
+  'dark'
+}
+
 ---Change borealis option (vim.g.borealis_config.option)
 ---@param opt string: option name
 ---@param value any: new value
@@ -20,7 +24,6 @@ function M.colorscheme()
   vim.g.colors_name = "borealis"
 
   require("borealis.highlights").setup()
-  require("borealis.terminal").setup()
 
 end
 
@@ -60,13 +63,9 @@ function M.setup(opts)
   if not vim.g.borealis_config or not vim.g.borealis_config.loaded then
     vim.g.borealis_config = vim.tbl_deep_extend("keep", vim.g.borealis_config or {}, default_config)
     M.set_option("loaded", true)
-    M.set_option("style", "dark")
   end
   if opts then
     vim.g.borealis_config = vim.tbl_deep_extend("force", vim.g.borealis_config, opts)
-    if opts.style then
-      M.set_option("style", opts.style)
-    end
   end
 end
 
