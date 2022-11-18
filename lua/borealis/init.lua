@@ -22,6 +22,7 @@ function M.colorscheme()
 
   vim.o.termguicolors = true
   vim.g.colors_name = "borealis"
+  M.set_option("style", "dark")
 
   require("borealis.highlights").setup()
 
@@ -42,6 +43,9 @@ local default_config = {
     strings = "none",
     variables = "none",
   },
+
+  colors = {},
+  highlights = {},
 
   lualine = {
     transparent = false,
