@@ -20,7 +20,7 @@ local borealis = {
   },
   normal = {
     a = { fg = colors.bg, bg = colors.blue, gui = 'bold' },
-    b = { fg = colors.fg, bg = c.bg3 },
+    b = { fg = colors.fg, bg = c.bg1 },
     c = { fg = colors.gray, bg = cfg.lualine.transparent and c.none or c.bg1 },
   },
   visual = { a = { fg = colors.bg, bg = colors.purple, gui = 'bold' } },
