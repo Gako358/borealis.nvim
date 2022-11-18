@@ -72,7 +72,7 @@ local default_config = {
   },
 
   -- Plugins Related
-  diagnostic = {
+  diagnostics = {
     darker = false,
     undercurl = false,
     background = "false",
