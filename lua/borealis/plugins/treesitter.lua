@@ -5,7 +5,7 @@ local colors = require("borealis.theme")
 local M = {}
 
 
-M.treesitter = {
+M.highlights = {
   ["@annotation"] = colors.Fg,
   ["@attribute"] = colors.Cyan,
   ["@boolean"] = colors.Orange,
