@@ -22,7 +22,7 @@ require('borealis').load()
 
 - [x] Support for bufferline
 - [ ] Support for lazygit
-- [ ] Support for lightspeed motions
+- [x] Support for lightspeed motions
 - [ ] Color adjustment, and more support to differernt languages
   - [ ] Rust
   - [ ] Python
@@ -34,6 +34,7 @@ require('borealis').load()
 
 - [GitSigns](https://github.com/lewis6991/gitsigns.nvim)
 - [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim/)
+- [Lightspeed](https://github.com/ggandor/lightspeed.nvim)
 - [LSPDiagnostics](https://neovim.io/doc/user/lsp.html)
 - [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
 - [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)

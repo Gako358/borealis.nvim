@@ -18,6 +18,7 @@ return {
     dark_red = "#993939",
     dark_yellow = "#93691d",
     dark_purple = "#f92672",
+    dark_green = "#7cb75f",
     diff_add = "#31392b",
     diff_delete = "#382b2c",
     diff_change = "#1c3448",

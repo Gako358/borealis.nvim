@@ -41,6 +41,7 @@
               nvim-web-devicons
               bufferline-nvim
               indent-blankline-nvim
+              lightspeed-nvim
             ];
           };
           customRC = ''
