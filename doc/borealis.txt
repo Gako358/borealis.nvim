@@ -41,7 +41,7 @@ FEATURES                                                   *borealis-features*
 
 - ☒ Support for bufferline
 - ☐ Support for lazygit
-- ☐ Support for lightspeed motions
+- ☒ Support for lightspeed motions
 - ☐ Color adjustment, and more support to differernt languages
     - ☐ Rust
     - ☐ Python
@@ -55,6 +55,7 @@ PLUGINS SUPPORTED                                 *borealis-plugins-supported*
 
 - GitSigns <https://github.com/lewis6991/gitsigns.nvim>
 - Indent Blankline <https://github.com/lukas-reineke/indent-blankline.nvim/>
+- Lightspeed <https://github.com/ggandor/lightspeed.nvim>
 - |LSPDiagnostics|
 - NvimTree <https://github.com/kyazdani42/nvim-tree.lua>
 - TreeSitter <https://github.com/nvim-treesitter/nvim-treesitter>
