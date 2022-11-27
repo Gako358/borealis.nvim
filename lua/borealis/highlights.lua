@@ -532,7 +532,6 @@ local lsp_kind_icons_color = {
 }
 
 function M.setup()
-  -- define cmp and aerial kind highlights with lsp_kind_icons_color
   for kind, color in pairs(lsp_kind_icons_color) do
     hl.plugins.cmp["CmpItemKind" .. kind] = { fg = color, fmt = cfg.cmp_itemkind_reverse and "reverse" }
   end
@@ -542,30 +541,6 @@ function M.setup()
   vim_highlights(hl.treesitter)
   for _, group in pairs(hl.langs) do vim_highlights(group) end
   for _, group in pairs(hl.plugins) do vim_highlights(group) end
-
-  -- user defined highlights: vim_highlights function cannot be used because it sets an attribute to none if not specified
-  -- local function replace_color(prefix, color_name)
-  --   if not color_name then return "" end
-  --   if color_name:sub(1, 1) == '$' then
-  --     local name = color_name:sub(2, -1)
-  --     color_name = c[name]
-  --     if not color_name then
-  --       vim.schedule(function()
-  --         vim.notify('borealis.nvim: unknown color "' .. name .. '"', vim.log.levels.ERROR, { title = "borealis.nvim" })
-  --       end)
-  --       return ""
-  --     end
-  --   end
-  --   return prefix .. "=" .. color_name
-  -- end
-  --
-  -- for group_name, group_settings in pairs(vim.g.borealis_config.highlights) do
-  --   vim.api.nvim_command(string.format("highlight %s %s %s %s %s", group_name,
-  --     replace_color("guifg", group_settings.fg),
-  --     replace_color("guibg", group_settings.bg),
-  --     replace_color("guisp", group_settings.sp),
-  --     replace_color("gui", group_settings.fmt)))
-  -- end
 end
 
 return M

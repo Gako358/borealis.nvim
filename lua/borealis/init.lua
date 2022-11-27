@@ -28,10 +28,10 @@ end
 
 local default_config = {
   style = "dark",
-  transparent = false, -- transparent background
-  term_colors = true, -- 24-bit terminal colors
-  ending_tildes = false, -- show end of buffer ending_tildes
-  cmp_itemkind_reverse = false, -- reverse cmp itemkind
+  transparent = false,
+  term_colors = true,
+  ending_tildes = false,
+  cmp_itemkind_reverse = false,
 
   -- Formats
   code_style = {
@@ -42,9 +42,6 @@ local default_config = {
     variables = "none",
   },
 
-  colors = {},
-  -- highlights = {},
-
   -- Plugins Related
   diagnostics = {
     darker = false,
@@ -54,16 +51,10 @@ local default_config = {
 }
 
 --- Setup borealis
----@param opts table: table with options
-function M.setup(opts)
-  --- if no options are passed, use default config
-  --- if it is the first time, create default config
+function M.setup()
   if not vim.g.borealis_config or not vim.g.borealis_config.loaded then
     vim.g.borealis_config = vim.tbl_deep_extend("keep", vim.g.borealis_config or {}, default_config)
     M.set_option("loaded", true)
-  end
-  if opts then
-    vim.g.borealis_config = vim.tbl_deep_extend("force", vim.g.borealis_config, opts)
   end
 end
 
