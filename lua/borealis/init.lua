@@ -43,7 +43,7 @@ local default_config = {
   },
 
   colors = {},
-  highlights = {},
+  -- highlights = {},
 
   -- Plugins Related
   diagnostics = {
