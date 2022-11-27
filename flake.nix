@@ -40,6 +40,7 @@
               ))
               nvim-web-devicons
               bufferline-nvim
+              indent-blankline-nvim
             ];
           };
           customRC = ''
