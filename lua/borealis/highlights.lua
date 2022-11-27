@@ -397,6 +397,20 @@ hl.plugins.bufferline = {
   BufferLineFill = { fg = c.bg1, bg = c.bg1 },
 }
 
+hl.plugins.lightspeed = {
+  LightspeedGreyWash = { fg = c.grey },
+  LightspeedLabel = { fg = c.purple, bold = true, underline = true },
+  LightspeedLabelDistant = { fg = c.green, bold = true, underline = true },
+  LightspeedLabelDistantOverlapped = { fg = c.dark_green, underline = true },
+  LightspeedLabelOverlapped = { fg = c.dark_purple, underline = true },
+  LightspeedMaskedChar = { fg = c.orange },
+  LightspeedOneCharMatch = { bg = c.purple, fg = c.fg, bold = true },
+  LightspeedPendingOpArea = { bg = c.purple, fg = c.fg },
+  LightspeedShortcut = { bg = c.purple, fg = c.fg, bold = true, underline = true },
+  LightspeedUnlabeledMatch = { fg = c.blue, bold = true },
+  LightspeedUniqueChar = { fg = c.blue, bold = true },
+}
+
 hl.langs.c = {
   cInclude = colors.Blue,
   cStorageClass = colors.Purple,
