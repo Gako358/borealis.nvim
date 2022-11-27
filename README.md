@@ -32,12 +32,13 @@ require('borealis').load()
 
 ## Plugins supported
 
-- [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [GitSigns](https://github.com/lewis6991/gitsigns.nvim)
+- [Indent Blankline](https://github.com/lukas-reineke/indent-blankline.nvim/)
 - [LSPDiagnostics](https://neovim.io/doc/user/lsp.html)
 - [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
+- [TreeSitter](https://github.com/nvim-treesitter/nvim-treesitter)
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [WhichKey](https://github.com/folke/which-key.nvim)
-- [GitSigns](https://github.com/lewis6991/gitsigns.nvim)
 
 ### Credits
 > **Disclaimer:** _This is a personal theme, heavily inspired by [Navararu's](https://github.com/navarasu) work_
