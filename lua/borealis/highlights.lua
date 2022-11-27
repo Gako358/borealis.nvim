@@ -347,17 +347,17 @@ hl.plugins.indent_blankline = {
 hl.plugins.bufferline = {
   -- Selected
   BufferLineIndicatorSelected = { fg = c.blue, bg = c.bg0 },
-  BufferLineBufferSelected = { fg = c.fg, bg = c.bg0, fmt = "bold" },
-  BufferLineNumbersSelected = { fg = c.fg, bg = c.bg0 },
-  BufferLineCloseButtonSelected = { fg = c.bg0, bg = c.bg0 },
-  BufferLineDiagnosticSelected = { fg = c.purple, bg = c.bg0 },
+  BufferLineBufferSelected = { fg = c.fg, bg = c.bg0, fmt = "bold" and "italic" },
+  BufferLineNumbersSelected = { fg = c.fg, bg = c.bg0, fmt = "bold" },
+  BufferLineCloseButtonSelected = { fg = c.fg, bg = c.bg0 },
+  BufferLineDiagnosticSelected = { fg = c.purple, bg = c.bg0, fmt = "bold" },
   BufferLineHintSelected = { fg = c.fg, bg = c.bg0 },
   BufferlineHintDiagnosticSelected = { fg = c.blue, bg = c.bg0 },
   BufferLineInfoSelected = { fg = c.fg, bg = c.bg0 },
   BufferLineInfoDiagnosticSelected = { fg = c.green, bg = c.bg0 },
-  BufferlineWarningSelected = { fg = c.fg, bg = c.bg0, fmt = "italic" },
+  BufferlineWarningSelected = { fg = c.fg, bg = c.bg0 },
   BufferLineWarningDiagnosticSelected = { fg = c.yellow, bg = c.bg0, fmt = "bold" },
-  BufferLineErrorSelected = { fg = c.fg, bg = c.bg0, fmt = "bold" },
+  BufferLineErrorSelected = { fg = c.fg, bg = c.bg0 },
   BufferLineErrorDiagnosticSelected = { fg = c.dark_red, bg = c.bg0, fmt = "bold" },
   BufferLineModifiedSelected = { fg = c.green, bg = c.bg0 },
   BufferLineDuplicateSelected = { fg = c.fg, bg = c.bg0 },
@@ -365,7 +365,7 @@ hl.plugins.bufferline = {
   -- Visible
   BufferLineBufferVisible = { fg = c.grey, bg = c.bg0 },
   BufferLineNumbersVisible = { fg = c.grey, bg = c.bg0 },
-  BufferLineCloseButtonVisible = { fg = c.bg0, bg = c.bg0 },
+  BufferLineCloseButtonVisible = { fg = c.grey, bg = c.bg0 },
   BufferLineDiagnosticVisible = { fg = c.grey, bg = c.bg0 },
   BufferLineHintVisible = { fg = c.grey, bg = c.bg0 },
   BufferlineHintDiagnosticVisible = { fg = c.blue, bg = c.bg0 },
@@ -544,28 +544,28 @@ function M.setup()
   for _, group in pairs(hl.plugins) do vim_highlights(group) end
 
   -- user defined highlights: vim_highlights function cannot be used because it sets an attribute to none if not specified
-  local function replace_color(prefix, color_name)
-    if not color_name then return "" end
-    if color_name:sub(1, 1) == '$' then
-      local name = color_name:sub(2, -1)
-      color_name = c[name]
-      if not color_name then
-        vim.schedule(function()
-          vim.notify('borealis.nvim: unknown color "' .. name .. '"', vim.log.levels.ERROR, { title = "borealis.nvim" })
-        end)
-        return ""
-      end
-    end
-    return prefix .. "=" .. color_name
-  end
-
-  for group_name, group_settings in pairs(vim.g.borealis_config.highlights) do
-    vim.api.nvim_command(string.format("highlight %s %s %s %s %s", group_name,
-      replace_color("guifg", group_settings.fg),
-      replace_color("guibg", group_settings.bg),
-      replace_color("guisp", group_settings.sp),
-      replace_color("gui", group_settings.fmt)))
-  end
+  -- local function replace_color(prefix, color_name)
+  --   if not color_name then return "" end
+  --   if color_name:sub(1, 1) == '$' then
+  --     local name = color_name:sub(2, -1)
+  --     color_name = c[name]
+  --     if not color_name then
+  --       vim.schedule(function()
+  --         vim.notify('borealis.nvim: unknown color "' .. name .. '"', vim.log.levels.ERROR, { title = "borealis.nvim" })
+  --       end)
+  --       return ""
+  --     end
+  --   end
+  --   return prefix .. "=" .. color_name
+  -- end
+  --
+  -- for group_name, group_settings in pairs(vim.g.borealis_config.highlights) do
+  --   vim.api.nvim_command(string.format("highlight %s %s %s %s %s", group_name,
+  --     replace_color("guifg", group_settings.fg),
+  --     replace_color("guibg", group_settings.bg),
+  --     replace_color("guisp", group_settings.sp),
+  --     replace_color("gui", group_settings.fmt)))
+  -- end
 end
 
 return M

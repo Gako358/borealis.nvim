@@ -45,6 +45,7 @@
             ];
           };
           customRC = ''
+            syntax on
             set termguicolors
             colorscheme borealis
 
