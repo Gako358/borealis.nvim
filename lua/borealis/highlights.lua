@@ -334,15 +334,15 @@ hl.plugins.telescope = {
   TelescopeSelectionCaret = colors.Yellow
 }
 
--- hl.plugins.indent_blankline = {
---   IndentBlankLineIndent1 = colors.Blue,
---   IndentBlankLineIndent2 = colors.Green,
---   IndentBlankLineIndent3 = colors.Yellow,
---   IndentBlankLineIndent4 = colors.Purple,
---   IndentBlankLineIndent5 = colors.Red,
---   IndentBlankLineIndent6 = colors.Cyan,
---   IndentBlankLineContext = { fg = c.orange, bg = c.bg3, bold = true },
--- }
+hl.plugins.indent_blankline = {
+  IndentBlankLineIndent1 = colors.Blue,
+  IndentBlankLineIndent2 = colors.Green,
+  IndentBlankLineIndent3 = colors.Yellow,
+  IndentBlankLineIndent4 = colors.Purple,
+  IndentBlankLineIndent5 = colors.Red,
+  IndentBlankLineIndent6 = colors.Cyan,
+  IndentBlankLineContext = { fg = c.orange, bg = c.bg3, bold = true },
+}
 
 hl.plugins.bufferline = {
   -- Selected
