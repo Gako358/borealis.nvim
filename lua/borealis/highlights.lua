@@ -1,5 +1,4 @@
 local M = {}
-
 local c = require('borealis.colors')
 local colors = require('borealis.palette').colors
 local cfg = vim.g.borealis_config
@@ -184,7 +183,6 @@ hl.treesitter = {
 hl.plugins.blankline = require("borealis.plugins.blankline").highlights
 hl.plugins.bufferline = require("borealis.plugins.bufferline").highlights
 hl.plugins.cmp = require("borealis.plugins.cmp").highlights
-hl.plugins.gitgutter = require("borealis.plugins.gitgutter").highlights
 hl.plugins.gitsigns = require("borealis.plugins.gitsigns").highlights
 hl.plugins.lightspeed = require("borealis.plugins.lightspeed").highlights
 hl.plugins.lsp = require("borealis.plugins.lsp").highlights
@@ -192,87 +190,12 @@ hl.plugins.nvimtree = require("borealis.plugins.nvimtree").highlights
 hl.plugins.telescope = require("borealis.plugins.telescope").highlights
 hl.plugins.whichkey = require("borealis.plugins.whichkey").highlights
 
-hl.langs.c = {
-  cInclude = colors.Blue,
-  cStorageClass = colors.Purple,
-  cTypedef = colors.Purple,
-  cDefine = colors.Cyan,
-  cTSInclude = colors.Blue,
-  cTSConstant = colors.Cyan,
-  cTSConstMacro = colors.Purple,
-  cTSOperator = colors.Purple,
-}
-
-hl.langs.cpp = {
-  cppStatement = { fg = c.purple, fmt = "bold" },
-  cppTSInclude = colors.Blue,
-  cppTSConstant = colors.Cyan,
-  cppTSConstMacro = colors.Purple,
-  cppTSOperator = colors.Purple,
-}
-
-hl.langs.markdown = {
-  markdownBlockquote = colors.Grey,
-  markdownBold = { fg = c.none, fmt = "bold" },
-  markdownBoldDelimiter = colors.Grey,
-  markdownCode = colors.Green,
-  markdownCodeBlock = colors.Green,
-  markdownCodeDelimiter = colors.Yellow,
-  markdownH1 = { fg = c.red, fmt = "bold" },
-  markdownH2 = { fg = c.purple, fmt = "bold" },
-  markdownH3 = { fg = c.orange, fmt = "bold" },
-  markdownH4 = { fg = c.red, fmt = "bold" },
-  markdownH5 = { fg = c.purple, fmt = "bold" },
-  markdownH6 = { fg = c.orange, fmt = "bold" },
-  markdownHeadingDelimiter = colors.Grey,
-  markdownHeadingRule = colors.Grey,
-  markdownId = colors.Yellow,
-  markdownIdDeclaration = colors.Red,
-  markdownItalic = { fg = c.none, fmt = "italic" },
-  markdownItalicDelimiter = { fg = c.grey, fmt = "italic" },
-  markdownLinkDelimiter = colors.Grey,
-  markdownLinkText = colors.Red,
-  markdownLinkTextDelimiter = colors.Grey,
-  markdownListMarker = colors.Red,
-  markdownOrderedListMarker = colors.Red,
-  markdownRule = colors.Purple,
-  markdownUrl = { fg = c.blue, fmt = "underline" },
-  markdownUrlDelimiter = colors.Grey,
-  markdownUrlTitleDelimiter = colors.Green
-}
-
-hl.langs.tex = {
-  latexTSInclude         = colors.Blue,
-  latexTSFuncMacro       = { fg = c.fg, fmt = cfg.code_style.functions },
-  latexTSEnvironment     = { fg = c.cyan, fmt = "bold" },
-  latexTSEnvironmentName = colors.Yellow,
-  texCmdEnv              = colors.Cyan,
-  texEnvArgName          = colors.Yellow,
-  latexTSTitle           = colors.Green,
-  latexTSType            = colors.Blue,
-  latexTSMath            = colors.Orange,
-  texMathZoneX           = colors.Orange,
-  texMathZoneXX          = colors.Orange,
-  texMathDelimZone       = colors.LightGrey,
-  texMathDelim           = colors.Purple,
-  texMathOper            = colors.Red,
-  texCmd                 = colors.Purple,
-  texCmdPart             = colors.Blue,
-  texCmdPackage          = colors.Blue,
-  texPgfType             = colors.Yellow,
-}
-
-hl.langs.vim = {
-  vimOption = colors.Red,
-  vimSetEqual = colors.Yellow,
-  vimMap = colors.Purple,
-  vimMapModKey = colors.Orange,
-  vimNotation = colors.Red,
-  vimMapLhs = colors.Fg,
-  vimMapRhs = colors.Blue,
-  vimVar = { fg = c.fg, fmt = cfg.code_style.variables },
-  vimCommentTitle = { fg = c.light_grey, fmt = cfg.code_style.comments },
-}
+hl.langs.c = require("borealis.syntax.c").highlights
+hl.langs.cpp = require("borealis.syntax.cpp").highlights
+hl.langs.lua = require("borealis.syntax.lua").highlights
+hl.langs.markdown = require("borealis.syntax.markdown").highlights
+hl.langs.tex = require("borealis.syntax.tex").highlights
+hl.langs.vim = require("borealis.syntax.vim").highlights
 
 local lsp_kind_icons_color = {
   Default = c.purple,
