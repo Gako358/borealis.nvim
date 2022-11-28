@@ -1,8 +1,9 @@
-local c = require('borealis.colors')
-local cfg = vim.g.borealis_config
-local util = require("borealis.util")
-
 local M = {}
+
+local c = require('borealis.colors').select_colors()
+local colors = require('borealis.colors').colors
+local cfg = vim.g.borealis_config
+
 local hl = { langs = {}, plugins = {} }
 
 local function vim_highlights(highlights)
@@ -15,18 +16,6 @@ local function vim_highlights(highlights)
   end
 end
 
-local colors = {
-  Fg = { fg = c.fg },
-  LightGrey = { fg = c.light_grey },
-  Grey = { fg = c.grey },
-  Red = { fg = c.red },
-  Cyan = { fg = c.cyan },
-  Yellow = { fg = c.yellow },
-  Orange = { fg = c.orange },
-  Green = { fg = c.green },
-  Blue = { fg = c.blue },
-  Purple = { fg = c.purple }
-}
 hl.common = {
   Normal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
   Terminal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
@@ -130,286 +119,18 @@ hl.syntax = {
   Todo = { fg = c.red, fmt = cfg.code_style.comments }
 }
 
-hl.treesitter = {
-  ["@annotation"] = colors.Fg,
-  ["@attribute"] = colors.Cyan,
-  ["@boolean"] = colors.Orange,
-  ["@character"] = colors.Orange,
-  ["@comment"] = { fg = c.grey, fmt = cfg.code_style.comments },
-  ["@conditional"] = { fg = c.purple, fmt = cfg.code_style.keywords },
-  ["@constant"] = colors.Orange,
-  ["@constant.builtin"] = colors.Orange,
-  ["@constant.macro"] = colors.Orange,
-  ["@constructor"] = { fg = c.yellow, fmt = "bold" },
-  ["@error"] = colors.Fg,
-  ["@exception"] = colors.Purple,
-  ["@field"] = colors.Cyan,
-  ["@float"] = colors.Orange,
-  ["@function"] = { fg = c.blue, fmt = cfg.code_style.functions },
-  ["@function.builtin"] = { fg = c.cyan, fmt = cfg.code_style.functions },
-  ["@function.macro"] = { fg = c.cyan, fmt = cfg.code_style.functions },
-  ["@include"] = colors.Purple,
-  ["@keyword"] = { fg = c.purple, fmt = cfg.code_style.keywords },
-  ["@keyword.function"] = { fg = c.purple, fmt = cfg.code_style.functions },
-  ["@keyword.operator"] = { fg = c.purple, fmt = cfg.code_style.keywords },
-  ["@label"] = colors.Red,
-  ["@method"] = colors.Blue,
-  ["@namespace"] = colors.Yellow,
-  ["@none"] = colors.Fg,
-  ["@number"] = colors.Orange,
-  ["@operator"] = colors.Fg,
-  ["@parameter"] = colors.Red,
-  ["@parameter.reference"] = colors.Fg,
-  ["@property"] = colors.Cyan,
-  ["@punctuation.delimiter"] = colors.LightGrey,
-  ["@punctuation.bracket"] = colors.LightGrey,
-  ["@punctuation.special"] = colors.Red,
-  ["@repeat"] = { fg = c.purple, fmt = cfg.code_style.keywords },
-  ["@string"] = { fg = c.green, fmt = cfg.code_style.strings },
-  ["@string.regex"] = { fg = c.orange, fmt = cfg.code_style.strings },
-  ["@string.escape"] = { fg = c.red, fmt = cfg.code_style.strings },
-  ["@symbol"] = colors.Cyan,
-  ["@tag"] = colors.Red,
-  ["@tag.delimiter"] = colors.Red,
-  ["@text"] = colors.Fg,
-  ["@text.strong"] = { fg = c.fg, fmt = 'bold' },
-  ["@text.emphasis"] = { fg = c.fg, fmt = 'italic' },
-  ["@text.underline"] = { fg = c.fg, fmt = 'underline' },
-  ["@text.strike"] = { fg = c.fg, fmt = 'strikethrough' },
-  ["@text.title"] = { fg = c.orange, fmt = 'bold' },
-  ["@text.literal"] = colors.Green,
-  ["@text.uri"] = { fg = c.cyan, fmt = 'underline' },
-  ["@text.math"] = colors.Fg,
-  ["@text.reference"] = colors.Blue,
-  ["@text.enviroment"] = colors.Fg,
-  ["@text.enviroment.name"] = colors.Fg,
-  ["@note"] = colors.Fg,
-  ["@warning"] = colors.Fg,
-  ["@danger"] = colors.Fg,
-  ["@type"] = colors.Yellow,
-  ["@type.builtin"] = colors.Orange,
-  ["@variable"] = { fg = c.fg, fmt = cfg.code_style.variables },
-  ["@variable.builtin"] = { fg = c.red, fmt = cfg.code_style.variables },
-}
+hl.treesitter = require("borealis.treesitter").highlights
 
-local diagnostics_error_color = cfg.diagnostics.darker and c.dark_red or c.red
-local diagnostics_hint_color = cfg.diagnostics.darker and c.dark_purple or c.purple
-local diagnostics_warn_color = cfg.diagnostics.darker and c.dark_yellow or c.yellow
-local diagnostics_info_color = cfg.diagnostics.darker and c.dark_cyan or c.cyan
-hl.plugins.lsp = {
-  LspCxxHlGroupEnumConstant = colors.Orange,
-  LspCxxHlGroupMemberVariable = colors.Orange,
-  LspCxxHlGroupNamespace = colors.Blue,
-  LspCxxHlSkippedRegion = colors.Grey,
-  LspCxxHlSkippedRegionBeginEnd = colors.Red,
-
-  DiagnosticError = { fg = c.red },
-  DiagnosticHint = { fg = c.purple },
-  DiagnosticInfo = { fg = c.cyan },
-  DiagnosticWarn = { fg = c.yellow },
-
-  DiagnosticVirtualTextError = { bg = cfg.diagnostics.background and util.darken(diagnostics_error_color, 0.1, c.bg0) or
-      c.none,
-    fg = diagnostics_error_color },
-  DiagnosticVirtualTextWarn = { bg = cfg.diagnostics.background and util.darken(diagnostics_warn_color, 0.1, c.bg0) or
-      c.none,
-    fg = diagnostics_warn_color },
-  DiagnosticVirtualTextInfo = { bg = cfg.diagnostics.background and util.darken(diagnostics_info_color, 0.1, c.bg0) or
-      c.none,
-    fg = diagnostics_info_color },
-  DiagnosticVirtualTextHint = { bg = cfg.diagnostics.background and util.darken(diagnostics_hint_color, 0.1, c.bg0) or
-      c.none,
-    fg = diagnostics_hint_color },
-
-  DiagnosticUnderlineError = { fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.red },
-  DiagnosticUnderlineHint = { fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.purple },
-  DiagnosticUnderlineInfo = { fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.blue },
-  DiagnosticUnderlineWarn = { fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.yellow },
-
-  LspReferenceText = { bg = c.bg2 },
-  LspReferenceWrite = { bg = c.bg2 },
-  LspReferenceRead = { bg = c.bg2 },
-
-  LspCodeLens = { fg = c.grey, fmt = cfg.code_style.comments },
-  LspCodeLensSeparator = { fg = c.grey },
-}
-
-hl.plugins.lsp.LspDiagnosticsDefaultError = hl.plugins.lsp.DiagnosticError
-hl.plugins.lsp.LspDiagnosticsDefaultHint = hl.plugins.lsp.DiagnosticHint
-hl.plugins.lsp.LspDiagnosticsDefaultInformation = hl.plugins.lsp.DiagnosticInfo
-hl.plugins.lsp.LspDiagnosticsDefaultWarning = hl.plugins.lsp.DiagnosticWarn
-hl.plugins.lsp.LspDiagnosticsUnderlineError = hl.plugins.lsp.DiagnosticUnderlineError
-hl.plugins.lsp.LspDiagnosticsUnderlineHint = hl.plugins.lsp.DiagnosticUnderlineHint
-hl.plugins.lsp.LspDiagnosticsUnderlineInformation = hl.plugins.lsp.DiagnosticUnderlineInfo
-hl.plugins.lsp.LspDiagnosticsUnderlineWarning = hl.plugins.lsp.DiagnosticUnderlineWarn
-hl.plugins.lsp.LspDiagnosticsVirtualTextError = hl.plugins.lsp.DiagnosticVirtualTextError
-hl.plugins.lsp.LspDiagnosticsVirtualTextWarning = hl.plugins.lsp.DiagnosticVirtualTextWarn
-hl.plugins.lsp.LspDiagnosticsVirtualTextInformation = hl.plugins.lsp.DiagnosticVirtualTextInfo
-hl.plugins.lsp.LspDiagnosticsVirtualTextHint = hl.plugins.lsp.DiagnosticVirtualTextHint
-
-hl.plugins.cmp = {
-  CmpItemAbbr = colors.Fg,
-  CmpItemAbbrDeprecated = { fg = c.light_grey, fmt = "strikethrough" },
-  CmpItemAbbrMatch = colors.Cyan,
-  CmpItemAbbrMatchFuzzy = { fg = c.cyan, fmt = "underline" },
-  CmpItemMenu = colors.LightGrey,
-  CmpItemKind = { fg = c.purple, fmt = cfg.cmp_itemkind_reverse and "reverse" },
-}
-
-hl.plugins.whichkey = {
-  WhichKey = colors.Red,
-  WhichKeyDesc = colors.Blue,
-  WhichKeyGroup = colors.Orange,
-  WhichKeySeperator = colors.Green
-}
-
-hl.plugins.gitgutter = {
-  GitGutterAdd = { fg = c.green },
-  GitGutterChange = { fg = c.blue },
-  GitGutterDelete = { fg = c.red },
-}
-
--- comment
-hl.plugins.diffview = {
-  DiffviewFilePanelTitle = { fg = c.blue, fmt = "bold" },
-  DiffviewFilePanelCounter = { fg = c.purple, fmt = "bold" },
-  DiffviewFilePanelFileName = colors.Fg,
-  DiffviewNormal = hl.common.Normal,
-  DiffviewCursorLine = hl.common.CursorLine,
-  DiffviewVertSplit = hl.common.VertSplit,
-  DiffviewSignColumn = hl.common.SignColumn,
-  DiffviewStatusLine = hl.common.StatusLine,
-  DiffviewStatusLineNC = hl.common.StatusLineNC,
-  DiffviewEndOfBuffer = hl.common.EndOfBuffer,
-  DiffviewFilePanelRootPath = colors.Grey,
-  DiffviewFilePanelPath = colors.Grey,
-  DiffviewFilePanelInsertions = colors.Green,
-  DiffviewFilePanelDeletions = colors.Red,
-  DiffviewStatusAdded = colors.Green,
-  DiffviewStatusUntracked = colors.Blue,
-  DiffviewStatusModified = colors.Blue,
-  DiffviewStatusRenamed = colors.Blue,
-  DiffviewStatusCopied = colors.Blue,
-  DiffviewStatusTypeChange = colors.Blue,
-  DiffviewStatusUnmerged = colors.Blue,
-  DiffviewStatusUnknown = colors.Red,
-  DiffviewStatusDeleted = colors.Red,
-  DiffviewStatusBroken = colors.Red
-}
-
-hl.plugins.gitsigns = {
-  GitSignsAdd = colors.Green,
-  GitSignsAddLn = colors.Green,
-  GitSignsAddNr = colors.Green,
-  GitSignsChange = colors.Blue,
-  GitSignsChangeLn = colors.Blue,
-  GitSignsChangeNr = colors.Blue,
-  GitSignsDelete = colors.Red,
-  GitSignsDeleteLn = colors.Red,
-  GitSignsDeleteNr = colors.Red
-}
-
-hl.plugins.nvim_tree = {
-  NvimTreeNormal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg1 },
-  NvimTreeVertSplit = { fg = c.bg1, bg = cfg.transparent and c.none or c.bg1 },
-  NvimTreeEndOfBuffer = { fg = cfg.ending_tildes and c.bg2 or c.bg1, bg = cfg.transparent and c.none or c.bg1 },
-  NvimTreeRootFolder = { fg = c.orange, fmt = "bold" },
-  NvimTreeGitDirty = colors.Yellow,
-  NvimTreeGitNew = colors.Green,
-  NvimTreeGitDeleted = colors.Red,
-  NvimTreeSpecialFile = { fg = c.yellow, fmt = "underline" },
-  NvimTreeIndentMarker = colors.Fg,
-  NvimTreeImageFile = { fg = c.dark_purple },
-  NvimTreeSymlink = colors.Purple,
-  NvimTreeFolderName = colors.Blue,
-}
-hl.plugins.telescope = {
-  TelescopeBorder = colors.Red,
-  TelescopePromptBorder = colors.Cyan,
-  TelescopeResultsBorder = colors.Cyan,
-  TelescopePreviewBorder = colors.Cyan,
-  TelescopeMatching = { fg = c.orange, fmt = "bold" },
-  TelescopePromptPrefix = colors.Green,
-  TelescopeSelection = { bg = c.bg2 },
-  TelescopeSelectionCaret = colors.Yellow
-}
-
-hl.plugins.indent_blankline = {
-  IndentBlankLineIndent1 = colors.Blue,
-  IndentBlankLineIndent2 = colors.Green,
-  IndentBlankLineIndent3 = colors.Yellow,
-  IndentBlankLineIndent4 = colors.Purple,
-  IndentBlankLineIndent5 = colors.Red,
-  IndentBlankLineIndent6 = colors.Cyan,
-  IndentBlankLineContext = { fg = c.orange, bg = c.bg3, bold = true },
-}
-
-hl.plugins.bufferline = {
-  -- Selected
-  BufferLineIndicatorSelected = { fg = c.blue, bg = c.bg0 },
-  BufferLineBufferSelected = { fg = c.fg, bg = c.bg0, fmt = "bold" and "italic" },
-  BufferLineNumbersSelected = { fg = c.fg, bg = c.bg0, fmt = "bold" },
-  BufferLineCloseButtonSelected = { fg = c.fg, bg = c.bg0 },
-  BufferLineDiagnosticSelected = { fg = c.purple, bg = c.bg0, fmt = "bold" },
-  BufferLineHintSelected = { fg = c.fg, bg = c.bg0 },
-  BufferlineHintDiagnosticSelected = { fg = c.blue, bg = c.bg0 },
-  BufferLineInfoSelected = { fg = c.fg, bg = c.bg0 },
-  BufferLineInfoDiagnosticSelected = { fg = c.green, bg = c.bg0 },
-  BufferlineWarningSelected = { fg = c.fg, bg = c.bg0 },
-  BufferLineWarningDiagnosticSelected = { fg = c.yellow, bg = c.bg0, fmt = "bold" },
-  BufferLineErrorSelected = { fg = c.fg, bg = c.bg0 },
-  BufferLineErrorDiagnosticSelected = { fg = c.dark_red, bg = c.bg0, fmt = "bold" },
-  BufferLineModifiedSelected = { fg = c.green, bg = c.bg0 },
-  BufferLineDuplicateSelected = { fg = c.fg, bg = c.bg0 },
-  BufferLineSeparatorSelected = { fg = c.grey, bg = c.bg0 },
-  -- Visible
-  BufferLineBufferVisible = { fg = c.grey, bg = c.bg0 },
-  BufferLineNumbersVisible = { fg = c.grey, bg = c.bg0 },
-  BufferLineCloseButtonVisible = { fg = c.grey, bg = c.bg0 },
-  BufferLineDiagnosticVisible = { fg = c.grey, bg = c.bg0 },
-  BufferLineHintVisible = { fg = c.grey, bg = c.bg0 },
-  BufferlineHintDiagnosticVisible = { fg = c.blue, bg = c.bg0 },
-  BufferLineInfoVisible = { fg = c.grey, bg = c.bg0 },
-  BufferLineInfoDiagnosticVisible = { fg = c.green, bg = c.bg0 },
-  BufferlineWarningVisible = { fg = c.grey, bg = c.bg0 },
-  BufferLineWarningDiagnosticVisible = { fg = c.orange, bg = c.bg0 },
-  BufferLineErrorVisible = { fg = c.grey, bg = c.bg0 },
-  BufferLineErrorDiagnosticVisible = { fg = c.dark_red, bg = c.bg0 },
-  BufferLineModifiedVisible = { fg = c.green, bg = c.bg0 },
-  BufferLineDuplicateVisible = { fg = c.grey, bg = c.bg0 },
-  BufferLineSeparatorVisible = { fg = c.grey, bg = c.bg0 },
-  -- Fill / inactive
-  BufferLineBackground = { fg = c.grey, bg = c.bg0 },
-  BufferLineNumbers = { fg = c.grey, bg = c.bg0 },
-  BufferLineCloseButton = { fg = c.grey, bg = c.bg0 },
-  BufferLineDiagnostic = { fg = c.grey, bg = c.bg0 },
-  BufferLineHint = { fg = c.grey, bg = c.bg0 },
-  BufferlineHintDiagnostic = { fg = c.grey, bg = c.bg0 },
-  BufferLineInfo = { fg = c.grey, bg = c.bg0 },
-  BufferLineInfoDiagnostic = { fg = c.grey, bg = c.bg0 },
-  BufferlineWarning = { fg = c.grey, bg = c.bg0 },
-  BufferLineWarningDiagnostic = { fg = c.orange, bg = c.bg0 },
-  BufferLineError = { fg = c.grey, bg = c.bg0 },
-  BufferLineErrorDiagnostic = { fg = c.dark_red, bg = c.bg0 },
-  BufferLineModified = { fg = c.green, bg = c.bg0 },
-  BufferLineDuplicate = { fg = c.grey, bg = c.bg0 },
-  BufferLineSeparator = { fg = c.grey, bg = c.bg0 },
-  BufferLineFill = { fg = c.bg1, bg = c.bg1 },
-}
-
-hl.plugins.lightspeed = {
-  LightspeedGreyWash = { fg = c.grey },
-  LightspeedLabel = { fg = c.purple, bold = true, underline = true },
-  LightspeedLabelDistant = { fg = c.green, bold = true, underline = true },
-  LightspeedLabelDistantOverlapped = { fg = c.dark_green, underline = true },
-  LightspeedLabelOverlapped = { fg = c.dark_purple, underline = true },
-  LightspeedMaskedChar = { fg = c.orange },
-  LightspeedOneCharMatch = { bg = c.purple, fg = c.fg, bold = true },
-  LightspeedPendingOpArea = { bg = c.purple, fg = c.fg },
-  LightspeedShortcut = { bg = c.purple, fg = c.fg, bold = true, underline = true },
-  LightspeedUnlabeledMatch = { fg = c.blue, bold = true },
-  LightspeedUniqueChar = { fg = c.blue, bold = true },
-}
+hl.plugins.blankline = require("borealis.plugins.blankline").highlights
+hl.plugins.bufferline = require("borealis.plugins.bufferline").highlights
+hl.plugins.cmp = require("borealis.plugins.cmp").highlights
+hl.plugins.gitgutter = require("borealis.plugins.gitgutter").highlights
+hl.plugins.gitsigns = require("borealis.plugins.gitsigns").highlights
+hl.plugins.lightspeed = require("borealis.plugins.lightspeed").highlights
+hl.plugins.lsp = require("borealis.plugins.lsp").highlights
+hl.plugins.nvimtree = require("borealis.plugins.nvimtree").highlights
+hl.plugins.telescope = require("borealis.plugins.telescope").highlights
+hl.plugins.whichkey = require("borealis.plugins.whichkey").highlights
 
 hl.langs.c = {
   cInclude = colors.Blue,
@@ -539,6 +260,8 @@ function M.setup()
   vim_highlights(hl.common)
   vim_highlights(hl.syntax)
   vim_highlights(hl.treesitter)
+
+  -- plugins
   for _, group in pairs(hl.langs) do vim_highlights(group) end
   for _, group in pairs(hl.plugins) do vim_highlights(group) end
 end
