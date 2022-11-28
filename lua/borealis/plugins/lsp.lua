@@ -1,7 +1,7 @@
 local M = {}
 local cfg = vim.g.borealis_config
 local c = require('borealis.colors')
-local colors = require('borealis.palette').colors
+local colors = require('borealis.config').colors
 
 local diagnostics_error_color = c.red
 local diagnostics_hint_color = c.purple
