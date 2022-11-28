@@ -42,6 +42,7 @@
               bufferline-nvim
               indent-blankline-nvim
               lightspeed-nvim
+              nvim-tree-lua
             ];
           };
           customRC = ''
@@ -60,6 +61,7 @@
                 show_current_context = true,
                 show_current_context_start = true,
             }
+            require("nvim-tree").setup()
             EOF
           '';
         };
