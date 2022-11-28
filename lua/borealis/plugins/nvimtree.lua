@@ -1,7 +1,7 @@
 local M = {}
 local cfg = vim.g.borealis_config
-local c = require('borealis.colors').select_colors()
-local colors = require('borealis.colors').colors
+local c = require('borealis.colors')
+local colors = require('borealis.palette').colors
 
 M.highlights = {
   NvimTreeNormal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg1 },

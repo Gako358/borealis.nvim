@@ -1,6 +1,6 @@
 local M = {}
-local c = require('borealis.colors').select_colors()
-local colors = require('borealis.colors').colors
+local c = require('borealis.colors')
+local colors = require('borealis.palette').colors
 
 M.highlights = {
   TelescopeBorder = colors.Red,

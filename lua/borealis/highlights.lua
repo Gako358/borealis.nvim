@@ -1,7 +1,7 @@
 local M = {}
 
-local c = require('borealis.colors').select_colors()
-local colors = require('borealis.colors').colors
+local c = require('borealis.colors')
+local colors = require('borealis.palette').colors
 local cfg = vim.g.borealis_config
 
 local hl = { langs = {}, plugins = {} }
@@ -119,7 +119,67 @@ hl.syntax = {
   Todo = { fg = c.red, fmt = cfg.code_style.comments }
 }
 
-hl.treesitter = require("borealis.treesitter").highlights
+hl.treesitter = {
+  ["@annotation"] = colors.Fg,
+  ["@attribute"] = colors.Cyan,
+  ["@boolean"] = colors.Orange,
+  ["@character"] = colors.Orange,
+  ["@comment"] = { fg = c.grey, fmt = cfg.code_style.comments },
+  ["@conditional"] = { fg = c.purple, fmt = cfg.code_style.keywords },
+  ["@constant"] = colors.Orange,
+  ["@constant.builtin"] = colors.Orange,
+  ["@constant.macro"] = colors.Orange,
+  ["@constructor"] = { fg = c.yellow, fmt = "bold" },
+  ["@error"] = colors.Fg,
+  ["@exception"] = colors.Purple,
+  ["@field"] = colors.Cyan,
+  ["@float"] = colors.Orange,
+  ["@function"] = { fg = c.blue, fmt = cfg.code_style.functions },
+  ["@function.builtin"] = { fg = c.cyan, fmt = cfg.code_style.functions },
+  ["@function.macro"] = { fg = c.cyan, fmt = cfg.code_style.functions },
+  ["@include"] = colors.Purple,
+  ["@keyword"] = { fg = c.purple, fmt = cfg.code_style.keywords },
+  ["@keyword.function"] = { fg = c.purple, fmt = cfg.code_style.functions },
+  ["@keyword.operator"] = { fg = c.purple, fmt = cfg.code_style.keywords },
+  ["@label"] = colors.Red,
+  ["@method"] = colors.Blue,
+  ["@namespace"] = colors.Yellow,
+  ["@none"] = colors.Fg,
+  ["@number"] = colors.Orange,
+  ["@operator"] = colors.Fg,
+  ["@parameter"] = colors.Red,
+  ["@parameter.reference"] = colors.Fg,
+  ["@property"] = colors.Cyan,
+  ["@punctuation.delimiter"] = colors.LightGrey,
+  ["@punctuation.bracket"] = colors.LightGrey,
+  ["@punctuation.special"] = colors.Red,
+  ["@repeat"] = { fg = c.purple, fmt = cfg.code_style.keywords },
+  ["@string"] = { fg = c.green, fmt = cfg.code_style.strings },
+  ["@string.regex"] = { fg = c.orange, fmt = cfg.code_style.strings },
+  ["@string.escape"] = { fg = c.red, fmt = cfg.code_style.strings },
+  ["@symbol"] = colors.Cyan,
+  ["@tag"] = colors.Red,
+  ["@tag.delimiter"] = colors.Red,
+  ["@text"] = colors.Fg,
+  ["@text.strong"] = { fg = c.fg, fmt = 'bold' },
+  ["@text.emphasis"] = { fg = c.fg, fmt = 'italic' },
+  ["@text.underline"] = { fg = c.fg, fmt = 'underline' },
+  ["@text.strike"] = { fg = c.fg, fmt = 'strikethrough' },
+  ["@text.title"] = { fg = c.orange, fmt = 'bold' },
+  ["@text.literal"] = colors.Green,
+  ["@text.uri"] = { fg = c.cyan, fmt = 'underline' },
+  ["@text.math"] = colors.Fg,
+  ["@text.reference"] = colors.Blue,
+  ["@text.enviroment"] = colors.Fg,
+  ["@text.enviroment.name"] = colors.Fg,
+  ["@note"] = colors.Fg,
+  ["@warning"] = colors.Fg,
+  ["@danger"] = colors.Fg,
+  ["@type"] = colors.Yellow,
+  ["@type.builtin"] = colors.Orange,
+  ["@variable"] = { fg = c.fg, fmt = cfg.code_style.variables },
+  ["@variable.builtin"] = { fg = c.red, fmt = cfg.code_style.variables },
+}
 
 hl.plugins.blankline = require("borealis.plugins.blankline").highlights
 hl.plugins.bufferline = require("borealis.plugins.bufferline").highlights
