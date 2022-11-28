@@ -1,9 +1,9 @@
-local c = require('borealis.colors')
-local colors = require("borealis.theme")
-
 local M = {}
+local c = require('borealis.colors').select_colors()
+local colors = require('borealis.colors').colors
 
-M.blankline = {
+
+M.highlights = {
   IndentBlankLineIndent1 = colors.Blue,
   IndentBlankLineIndent2 = colors.Green,
   IndentBlankLineIndent3 = colors.Yellow,

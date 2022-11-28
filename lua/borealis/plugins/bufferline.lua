@@ -1,8 +1,7 @@
-local c = require('borealis.colors')
-
 local M = {}
+local c = require('borealis.colors').select_colors()
 
-M.bufferline = {
+M.highlights = {
   -- Selected
   BufferLineIndicatorSelected = { fg = c.blue, bg = c.bg0 },
   BufferLineBufferSelected = { fg = c.fg, bg = c.bg0, fmt = "bold" and "italic" },

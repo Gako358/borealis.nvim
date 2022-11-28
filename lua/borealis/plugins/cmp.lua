@@ -1,10 +1,9 @@
-local c = require('borealis.colors')
-local cfg = vim.g.borealis_config
-local colors = require("borealis.theme")
-
 local M = {}
+local c = require('borealis.colors').select_colors()
+local colors = require('borealis.colors').colors
+local cfg = vim.g.borealis_config
 
-M.cmp = {
+M.highlights = {
   CmpItemAbbr = colors.Fg,
   CmpItemAbbrDeprecated = { fg = c.light_grey, fmt = "strikethrough" },
   CmpItemAbbrMatch = colors.Cyan,

@@ -1,8 +1,7 @@
-local c = require('borealis.colors')
-
 local M = {}
+local c = require('borealis.colors').select_colors()
 
-M.lightspeed = {
+M.highlights = {
   LightspeedGreyWash = { fg = c.grey },
   LightspeedLabel = { fg = c.purple, fmt = "bold" and "underline" },
   LightspeedLabelDistant = { fg = c.green, fmt = "bold" and "underline" },

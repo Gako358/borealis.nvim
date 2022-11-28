@@ -1,8 +1,7 @@
-local colors = require("borealis.theme")
-
 local M = {}
+local colors = require('borealis.colors').colors
 
-M.gitsigns = {
+M.highlights = {
   GitSignsAdd = colors.Green,
   GitSignsAddLn = colors.Green,
   GitSignsAddNr = colors.Green,

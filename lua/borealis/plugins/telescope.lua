@@ -1,9 +1,8 @@
-local c = require('borealis.colors')
-local colors = require("borealis.theme")
-
 local M = {}
+local c = require('borealis.colors').select_colors()
+local colors = require('borealis.colors').colors
 
-M.telescope = {
+M.highlights = {
   TelescopeBorder = colors.Red,
   TelescopePromptBorder = colors.Cyan,
   TelescopeResultsBorder = colors.Cyan,

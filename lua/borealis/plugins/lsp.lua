@@ -1,15 +1,15 @@
-local c = require('borealis.colors')
-local cfg = vim.g.borealis_config
-local colors = require("borealis.theme")
-local util = require("borealis.util")
-
 local M = {}
-  local diagnostics_error_color = cfg.diagnostics.darker and c.dark_red or c.red
-  local diagnostics_hint_color = cfg.diagnostics.darker and c.dark_purple or c.purple
-  local diagnostics_warn_color = cfg.diagnostics.darker and c.dark_yellow or c.yellow
-  local diagnostics_info_color = cfg.diagnostics.darker and c.dark_cyan or c.cyan
+local cfg = vim.g.borealis_config
+local util = require("borealis.util")
+local c = require('borealis.colors').select_colors()
+local colors = require('borealis.colors').colors
 
-M.lsp = {
+local diagnostics_error_color = cfg.diagnostics.darker and c.dark_red or c.red
+local diagnostics_hint_color = cfg.diagnostics.darker and c.dark_purple or c.purple
+local diagnostics_warn_color = cfg.diagnostics.darker and c.dark_yellow or c.yellow
+local diagnostics_info_color = cfg.diagnostics.darker and c.dark_cyan or c.cyan
+
+M.highlights = {
   LspCxxHlGroupEnumConstant = colors.Orange,
   LspCxxHlGroupMemberVariable = colors.Orange,
   LspCxxHlGroupNamespace = colors.Blue,
@@ -47,18 +47,17 @@ M.lsp = {
   LspCodeLensSeparator = { fg = c.grey },
 }
 
-M.lsp.LspDiagnosticsDefaultError = M.lsp.DiagnosticError
-M.lsp.LspDiagnosticsDefaultHint = M.lsp.DiagnosticHint
-M.lsp.LspDiagnosticsDefaultInformation = M.lsp.DiagnosticInfo
-M.lsp.LspDiagnosticsDefaultWarning = M.lsp.DiagnosticWarn
-M.lsp.LspDiagnosticsUnderlineError = M.lsp.DiagnosticUnderlineError
-M.lsp.LspDiagnosticsUnderlineHint = M.lsp.DiagnosticUnderlineHint
-M.lsp.LspDiagnosticsUnderlineInformation = M.lsp.DiagnosticUnderlineInfo
-M.lsp.LspDiagnosticsUnderlineWarning = M.lsp.DiagnosticUnderlineWarn
-M.lsp.LspDiagnosticsVirtualTextError = M.lsp.DiagnosticVirtualTextError
-M.lsp.LspDiagnosticsVirtualTextWarning = M.lsp.DiagnosticVirtualTextWarn
-M.lsp.LspDiagnosticsVirtualTextInformation = M.lsp.DiagnosticVirtualTextInfo
-M.lsp.LspDiagnosticsVirtualTextHint = M.lsp.DiagnosticVirtualTextHint
+M.highlights.LspDiagnosticsDefaultError = M.highlights.DiagnosticError
+M.highlights.LspDiagnosticsDefaultHint = M.highlights.DiagnosticHint
+M.highlights.LspDiagnosticsDefaultInformation = M.highlights.DiagnosticInfo
+M.highlights.LspDiagnosticsDefaultWarning = M.highlights.DiagnosticWarn
+M.highlights.LspDiagnosticsUnderlineError = M.highlights.DiagnosticUnderlineError
+M.highlights.LspDiagnosticsUnderlineHint = M.highlights.DiagnosticUnderlineHint
+M.highlights.LspDiagnosticsUnderlineInformation = M.highlights.DiagnosticUnderlineInfo
+M.highlights.LspDiagnosticsUnderlineWarning = M.highlights.DiagnosticUnderlineWarn
+M.highlights.LspDiagnosticsVirtualTextError = M.highlights.DiagnosticVirtualTextError
+M.highlights.LspDiagnosticsVirtualTextWarning = M.highlights.DiagnosticVirtualTextWarn
+M.highlights.LspDiagnosticsVirtualTextInformation = M.highlights.DiagnosticVirtualTextInfo
+M.highlights.LspDiagnosticsVirtualTextHint = M.highlights.DiagnosticVirtualTextHint
 
 return M
-

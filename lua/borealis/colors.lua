@@ -1,4 +1,5 @@
-local colors = {
+local M = {}
+local c = {
   dark = {
     black = "#252525",
     bg0 = "#272727", -- # Main background
@@ -50,10 +51,23 @@ local colors = {
   },
 }
 
-local function select_colors()
+M.colors = {
+  Fg = { fg = c.fg },
+  LightGrey = { fg = c.light_grey },
+  Grey = { fg = c.grey },
+  Red = { fg = c.red },
+  Cyan = { fg = c.cyan },
+  Yellow = { fg = c.yellow },
+  Orange = { fg = c.orange },
+  Green = { fg = c.green },
+  Blue = { fg = c.blue },
+  Purple = { fg = c.purple }
+}
+
+function M.select_colors()
   local selected = { none = "none" }
-  selected = vim.tbl_extend("force", selected, colors[vim.g.borealis_config.style])
+  selected = vim.tbl_extend("force", selected, c[vim.g.borealis_config.style])
   return selected
 end
 
-return select_colors()
+return M

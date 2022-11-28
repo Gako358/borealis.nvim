@@ -1,6 +1,5 @@
-local c = require('borealis.colors')
-
 local M = {}
+local c = require('borealis.colors')
 
 M.colors = {
   Fg = { fg = c.fg },

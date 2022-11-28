@@ -1,8 +1,7 @@
-local colors = require("borealis.theme")
-
 local M = {}
+local colors = require('borealis.colors').colors
 
-M.whichkey = {
+M.highlights = {
   WhichKey = colors.Red,
   WhichKeyDesc = colors.Blue,
   WhichKeyGroup = colors.Orange,
