@@ -4,7 +4,7 @@ local c = require('borealis.colors')
 M.highlights = {
   -- Selected
   BufferLineIndicatorSelected = { fg = c.blue, bg = c.bg0 },
-  BufferLineBufferSelected = { fg = c.fg, bg = c.bg0, fmt = "bold" and "italic" },
+  BufferLineBufferSelected = { fg = c.fg, bg = c.bg0, fmt = "bold,italic" },
   BufferLineNumbersSelected = { fg = c.fg, bg = c.bg0, fmt = "bold" },
   BufferLineCloseButtonSelected = { fg = c.fg, bg = c.bg0 },
   BufferLineDiagnosticSelected = { fg = c.purple, bg = c.bg0, fmt = "bold" },

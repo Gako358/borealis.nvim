@@ -237,7 +237,7 @@ local lsp_kind_icons_color = {
 
 function M.setup()
   for kind, color in pairs(lsp_kind_icons_color) do
-    hl.plugins.cmp["CmpItemKind" .. kind] = { fg = color, fmt = "reverse" }
+    hl.plugins.cmp["CmpItemKind" .. kind] = { fg = color }
   end
 
   vim_highlights(hl.common)

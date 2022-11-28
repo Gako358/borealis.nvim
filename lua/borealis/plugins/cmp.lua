@@ -8,7 +8,7 @@ M.highlights = {
   CmpItemAbbrMatch = colors.Cyan,
   CmpItemAbbrMatchFuzzy = { fg = c.cyan, fmt = "underline" },
   CmpItemMenu = colors.LightGrey,
-  CmpItemKind = { fg = c.purple, fmt = "reverse" },
+  CmpItemKind = { fg = c.purple },
 }
 
 return M
