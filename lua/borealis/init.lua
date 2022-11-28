@@ -26,8 +26,20 @@ function M.colorscheme()
   require("borealis.theme").setup()
 end
 
+function M.toggle()
+  if vim.g.borealis_config.style == "light" then
+    M.set_option("style", "dark")
+    vim.o.background = "dark"
+  else
+    M.set_option("style", "light")
+    vim.o.background = "light"
+  end
+  vim.api.nvim_command("colorscheme borealis")
+end
+
 local default_config = {
   style = "dark",
+  toggle_style = "<c-t>",
   term_colors = true,
 
   code_style = {
@@ -44,6 +56,11 @@ function M.setup()
   if not vim.g.borealis_config or not vim.g.borealis_config.loaded then
     vim.g.borealis_config = vim.tbl_deep_extend("keep", vim.g.borealis_config or {}, default_config)
     M.set_option("loaded", true)
+  end
+
+  if vim.g.borealis_config.toggle_style then
+    vim.api.nvim_set_keymap('n', vim.g.borealis_config.toggle_style, '<cmd>lua require("borealis").toggle()<cr>',
+      { noremap = true, silent = true })
   end
 end
 
