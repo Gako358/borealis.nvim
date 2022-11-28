@@ -43,6 +43,7 @@ local colors = {
     dark_red = "#833b3b",
     dark_yellow = "#7c5c20",
     dark_purple = "#79428a",
+    dark_green = "#4a6c3a",
     diff_add = "#e2fbe4",
     diff_delete = "#fce2e5",
     diff_change = "#e2ecfb",
