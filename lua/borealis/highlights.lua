@@ -16,12 +16,12 @@ local function vim_highlights(highlights)
 end
 
 hl.common = {
-  Normal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
-  Terminal = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
-  EndOfBuffer = { fg = cfg.ending_tildes and c.bg2 or c.bg0, bg = cfg.transparent and c.none or c.bg0 },
-  FoldColumn = { fg = c.fg, bg = cfg.transparent and c.none or c.bg1 },
-  Folded = { fg = c.fg, bg = cfg.transparent and c.none or c.bg1 },
-  SignColumn = { fg = c.fg, bg = cfg.transparent and c.none or c.bg0 },
+  Normal = { fg = c.fg, bg = c.bg0 },
+  Terminal = { fg = c.fg, bg = c.bg0 },
+  EndOfBuffer = { fg = c.bg0, bg = c.bg0 },
+  FoldColumn = { fg = c.fg, bg = c.bg1 },
+  Folded = { fg = c.fg, bg = c.bg1 },
+  SignColumn = { fg = c.fg, bg = c.bg0 },
   ToolbarLine = { fg = c.fg },
   Cursor = { fmt = "reverse" },
   vCursor = { fmt = "reverse" },
@@ -237,7 +237,7 @@ local lsp_kind_icons_color = {
 
 function M.setup()
   for kind, color in pairs(lsp_kind_icons_color) do
-    hl.plugins.cmp["CmpItemKind" .. kind] = { fg = color, fmt = cfg.cmp_itemkind_reverse and "reverse" }
+    hl.plugins.cmp["CmpItemKind" .. kind] = { fg = color, fmt = "reverse" }
   end
 
   vim_highlights(hl.common)
