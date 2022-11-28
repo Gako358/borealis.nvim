@@ -1,5 +1,5 @@
 local M = {}
-local c = require('borealis.colors').select_colors()
+local c = require('borealis.colors')
 
 M.highlights = {
   GitGutterAdd = { fg = c.green },

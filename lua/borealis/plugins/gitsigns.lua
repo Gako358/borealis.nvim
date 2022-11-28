@@ -1,5 +1,5 @@
 local M = {}
-local colors = require('borealis.colors').colors
+local colors = require('borealis.palette').colors
 
 M.highlights = {
   GitSignsAdd = colors.Green,
