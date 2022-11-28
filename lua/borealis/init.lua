@@ -23,7 +23,7 @@ function M.colorscheme()
   elseif vim.g.borealis_config.style == "light" then
     M.set_option("style", "dark")
   end
-  require("borealis.highlights").setup()
+  require("borealis.theme").setup()
 end
 
 local default_config = {

@@ -1,6 +1,6 @@
 local M = {}
 local c = require('borealis.colors')
-local colors = require('borealis.palette').colors
+local colors = require('borealis.config').colors
 
 M.highlights = {
   CmpItemAbbr = colors.Fg,

@@ -1,5 +1,5 @@
 local M = {}
-local colors = require('borealis.palette').colors
+local colors = require('borealis.config').colors
 
 M.highlights = {
   WhichKey = colors.Red,

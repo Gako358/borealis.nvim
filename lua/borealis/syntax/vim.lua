@@ -1,6 +1,6 @@
 local M = {}
 local c = require('borealis.colors')
-local colors = require('borealis.palette').colors
+local colors = require('borealis.config').colors
 local cfg = vim.g.borealis_config
 
 M.highlights = {
