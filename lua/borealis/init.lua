@@ -28,25 +28,14 @@ end
 
 local default_config = {
   style = "dark",
-  transparent = false,
   term_colors = true,
-  ending_tildes = false,
-  cmp_itemkind_reverse = false,
 
-  -- Formats
   code_style = {
     comments = "italic",
     functions = "italic",
     keywords = "none",
     strings = "italic",
     variables = "none",
-  },
-
-  -- Plugins Related
-  diagnostics = {
-    darker = false,
-    undercurl = false,
-    background = false,
   },
 }
 

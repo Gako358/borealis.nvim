@@ -1,7 +1,6 @@
 local M = {}
 local c = require('borealis.colors')
 local colors = require('borealis.palette').colors
-local cfg = vim.g.borealis_config
 
 M.highlights = {
   CmpItemAbbr = colors.Fg,
@@ -9,7 +8,7 @@ M.highlights = {
   CmpItemAbbrMatch = colors.Cyan,
   CmpItemAbbrMatchFuzzy = { fg = c.cyan, fmt = "underline" },
   CmpItemMenu = colors.LightGrey,
-  CmpItemKind = { fg = c.purple, fmt = cfg.cmp_itemkind_reverse and "reverse" },
+  CmpItemKind = { fg = c.purple, fmt = "reverse" },
 }
 
 return M

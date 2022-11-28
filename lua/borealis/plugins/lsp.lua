@@ -1,13 +1,12 @@
 local M = {}
 local cfg = vim.g.borealis_config
-local util = require("borealis.util")
 local c = require('borealis.colors')
 local colors = require('borealis.palette').colors
 
-local diagnostics_error_color = cfg.diagnostics.darker and c.dark_red or c.red
-local diagnostics_hint_color = cfg.diagnostics.darker and c.dark_purple or c.purple
-local diagnostics_warn_color = cfg.diagnostics.darker and c.dark_yellow or c.yellow
-local diagnostics_info_color = cfg.diagnostics.darker and c.dark_cyan or c.cyan
+local diagnostics_error_color = c.red
+local diagnostics_hint_color = c.purple
+local diagnostics_warn_color = c.yellow
+local diagnostics_info_color = c.cyan
 
 M.highlights = {
   LspCxxHlGroupEnumConstant = colors.Orange,
@@ -21,23 +20,15 @@ M.highlights = {
   DiagnosticInfo = { fg = c.cyan },
   DiagnosticWarn = { fg = c.yellow },
 
-  DiagnosticVirtualTextError = { bg = cfg.diagnostics.background and util.darken(diagnostics_error_color, 0.1, c.bg0) or
-      c.none,
-    fg = diagnostics_error_color },
-  DiagnosticVirtualTextWarn = { bg = cfg.diagnostics.background and util.darken(diagnostics_warn_color, 0.1, c.bg0) or
-      c.none,
-    fg = diagnostics_warn_color },
-  DiagnosticVirtualTextInfo = { bg = cfg.diagnostics.background and util.darken(diagnostics_info_color, 0.1, c.bg0) or
-      c.none,
-    fg = diagnostics_info_color },
-  DiagnosticVirtualTextHint = { bg = cfg.diagnostics.background and util.darken(diagnostics_hint_color, 0.1, c.bg0) or
-      c.none,
-    fg = diagnostics_hint_color },
+  DiagnosticVirtualTextError = { bg = c.none, fg = diagnostics_error_color },
+  DiagnosticVirtualTextWarn = { bg = c.none, fg = diagnostics_warn_color },
+  DiagnosticVirtualTextInfo = { bg = c.none, fg = diagnostics_info_color },
+  DiagnosticVirtualTextHint = { bg = c.none, fg = diagnostics_hint_color },
 
-  DiagnosticUnderlineError = { fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.red },
-  DiagnosticUnderlineHint = { fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.purple },
-  DiagnosticUnderlineInfo = { fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.blue },
-  DiagnosticUnderlineWarn = { fmt = cfg.diagnostics.undercurl and "undercurl" or "underline", sp = c.yellow },
+  DiagnosticUnderlineError = { fmt = "underline", sp = c.red },
+  DiagnosticUnderlineHint = { fmt = "underline", sp = c.purple },
+  DiagnosticUnderlineInfo = { fmt = "underline", sp = c.blue },
+  DiagnosticUnderlineWarn = { fmt = "underline", sp = c.yellow },
 
   LspReferenceText = { bg = c.bg2 },
   LspReferenceWrite = { bg = c.bg2 },
