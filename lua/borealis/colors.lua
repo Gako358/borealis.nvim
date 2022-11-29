@@ -52,29 +52,31 @@ local colors = {
   },
 }
 
-function M.terminal_color()
-  vim.g.terminal_color_0 = colors.bg0
-  vim.g.terminal_color_1 = colors.red
-  vim.g.terminal_color_2 = colors.green
-  vim.g.terminal_color_3 = colors.yellow
-  vim.g.terminal_color_4 = colors.blue
-  vim.g.terminal_color_5 = colors.purple
-  vim.g.terminal_color_6 = colors.cyan
-  vim.g.terminal_color_7 = colors.fg
-  vim.g.terminal_color_8 = colors.grey
-  vim.g.terminal_color_9 = colors.red
-  vim.g.terminal_color_10 = colors.green
-  vim.g.terminal_color_11 = colors.yellow
-  vim.g.terminal_color_12 = colors.blue
-  vim.g.terminal_color_13 = colors.purple
-  vim.g.terminal_color_14 = colors.cyan
-  vim.g.terminal_color_15 = colors.fg
-end
-
 function M.select_colors()
   local selected = { none = "none" }
   selected = vim.tbl_extend("force", selected, colors[vim.g.borealis_config.style])
   return selected
+end
+
+local c = M.select_colors()
+
+function M.terminal_color()
+  vim.g.terminal_color_0 = c.bg0
+  vim.g.terminal_color_1 = c.red
+  vim.g.terminal_color_2 = c.green
+  vim.g.terminal_color_3 = c.yellow
+  vim.g.terminal_color_4 = c.blue
+  vim.g.terminal_color_5 = c.purple
+  vim.g.terminal_color_6 = c.cyan
+  vim.g.terminal_color_7 = c.fg
+  vim.g.terminal_color_8 = c.grey
+  vim.g.terminal_color_9 = c.red
+  vim.g.terminal_color_10 = c.green
+  vim.g.terminal_color_11 = c.yellow
+  vim.g.terminal_color_12 = c.blue
+  vim.g.terminal_color_13 = c.purple
+  vim.g.terminal_color_14 = c.cyan
+  vim.g.terminal_color_15 = c.fg
 end
 
 return M
