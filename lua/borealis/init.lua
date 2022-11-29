@@ -24,6 +24,7 @@ function M.colorscheme()
     M.set_option("style", "dark")
   end
   require("borealis.theme").setup()
+  require("borealis.config").terminal_color()
 end
 
 function M.toggle()
@@ -40,7 +41,6 @@ end
 local default_config = {
   style = "dark",
   toggle_style = "<c-t>",
-  term_colors = true,
 
   code_style = {
     comments = "italic",
