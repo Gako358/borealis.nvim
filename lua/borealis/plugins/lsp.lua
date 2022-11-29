@@ -1,7 +1,6 @@
 local M = {}
 local cfg = vim.g.borealis_config
-local c = require('borealis.colors')
-local colors = require('borealis.config').colors
+local c = require("borealis.colors").select_colors()
 
 local diagnostics_error_color = c.red
 local diagnostics_hint_color = c.purple
@@ -9,11 +8,11 @@ local diagnostics_warn_color = c.yellow
 local diagnostics_info_color = c.cyan
 
 M.highlights = {
-  LspCxxHlGroupEnumConstant = colors.Orange,
-  LspCxxHlGroupMemberVariable = colors.Orange,
-  LspCxxHlGroupNamespace = colors.Blue,
-  LspCxxHlSkippedRegion = colors.Grey,
-  LspCxxHlSkippedRegionBeginEnd = colors.Red,
+  LspCxxHlGroupEnumConstant = { fg = c.orange },
+  LspCxxHlGroupMemberVariable = { fg = c.orange },
+  LspCxxHlGroupNamespace = { fg = c.blue },
+  LspCxxHlSkippedRegion = { fg = c.grey },
+  LspCxxHlSkippedRegionBeginEnd = { fg = c.red },
 
   DiagnosticError = { fg = c.red },
   DiagnosticHint = { fg = c.purple },

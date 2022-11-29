@@ -1,13 +1,12 @@
 local M = {}
-local c = require('borealis.colors')
-local colors = require('borealis.config').colors
+local c = require("borealis.colors").select_colors()
 
 M.highlights = {
   cppStatement = { fg = c.purple, fmt = "bold" },
-  cppTSInclude = colors.Blue,
-  cppTSConstant = colors.Cyan,
-  cppTSConstMacro = colors.Purple,
-  cppTSOperator = colors.Purple,
+  cppTSInclude = { fg = c.blue },
+  cppTSConstant = { fg = c.cyan },
+  cppTSConstMacro = { fg = c.purple },
+  cppTSOperator = { fg = c.purple },
 }
 
 return M

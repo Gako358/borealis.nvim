@@ -1,16 +1,16 @@
 local M = {}
-local colors = require('borealis.config').colors
+local c = require("borealis.colors").select_colors()
 
 M.highlights = {
-  GitSignsAdd = colors.Green,
-  GitSignsAddLn = colors.Green,
-  GitSignsAddNr = colors.Green,
-  GitSignsChange = colors.Blue,
-  GitSignsChangeLn = colors.Blue,
-  GitSignsChangeNr = colors.Blue,
-  GitSignsDelete = colors.Red,
-  GitSignsDeleteLn = colors.Red,
-  GitSignsDeleteNr = colors.Red
+  GitSignsAdd = { fg = c.green },
+  GitSignsAddLn = { fg = c.green },
+  GitSignsAddNr = { fg = c.green },
+  GitSignsChange = { fg = c.yellow },
+  GitSignsChangeLn = { fg = c.yellow },
+  GitSignsChangeNr = { fg = c.yellow },
+  GitSignsDelete = { fg = c.red },
+  GitSignsDeleteLn = { fg = c.red },
+  GitSignsDeleteNr = { fg = c.red },
 }
 
 return M

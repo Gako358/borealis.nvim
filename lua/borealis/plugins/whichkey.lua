@@ -1,11 +1,11 @@
 local M = {}
-local colors = require('borealis.config').colors
+local c = require("borealis.colors").select_colors()
 
 M.highlights = {
-  WhichKey = colors.Red,
-  WhichKeyDesc = colors.Blue,
-  WhichKeyGroup = colors.Orange,
-  WhichKeySeperator = colors.Green
+  WhichKey = { fg = c.red },
+  WhichKeyDesc = { fg = c.blue },
+  WhichKeyGroup = { fg = c.orange },
+  WhichKeySeperator = { fg = c.green },
 }
 
 return M

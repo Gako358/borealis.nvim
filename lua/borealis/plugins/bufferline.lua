@@ -1,5 +1,5 @@
 local M = {}
-local c = require('borealis.colors')
+local c = require("borealis.colors").select_colors()
 
 M.highlights = {
   -- Selected
