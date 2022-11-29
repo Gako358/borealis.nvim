@@ -1,35 +1,34 @@
 local M = {}
-local c = require('borealis.colors')
-local colors = require('borealis.config').colors
+local c = require("borealis.colors").select_colors()
 
 M.highlights = {
-  markdownBlockquote = colors.Grey,
+  markdownBlockquote = { fg = c.gray },
   markdownBold = { fg = c.none, fmt = "bold" },
-  markdownBoldDelimiter = colors.Grey,
-  markdownCode = colors.Green,
-  markdownCodeBlock = colors.Green,
-  markdownCodeDelimiter = colors.Yellow,
+  markdownBoldDelimiter = { fg = c.grey, fmt = "bold" },
+  markdownCode = { fg = c.green },
+  markdownCodeBlock = { fg = c.green },
+  markdownCodeDelimiter = { fg = c.yellow },
   markdownH1 = { fg = c.red, fmt = "bold" },
   markdownH2 = { fg = c.purple, fmt = "bold" },
   markdownH3 = { fg = c.orange, fmt = "bold" },
   markdownH4 = { fg = c.red, fmt = "bold" },
   markdownH5 = { fg = c.purple, fmt = "bold" },
   markdownH6 = { fg = c.orange, fmt = "bold" },
-  markdownHeadingDelimiter = colors.Grey,
-  markdownHeadingRule = colors.Grey,
-  markdownId = colors.Yellow,
-  markdownIdDeclaration = colors.Red,
+  markdownHeadingDelimiter = { fg = c.grey },
+  markdownHeadingRule = { fg = c.grey },
+  markdownId = { fg = c.yellow },
+  markdownIdDeclaration = { fg = c.red },
   markdownItalic = { fg = c.none, fmt = "italic" },
   markdownItalicDelimiter = { fg = c.grey, fmt = "italic" },
-  markdownLinkDelimiter = colors.Grey,
-  markdownLinkText = colors.Red,
-  markdownLinkTextDelimiter = colors.Grey,
-  markdownListMarker = colors.Red,
-  markdownOrderedListMarker = colors.Red,
-  markdownRule = colors.Purple,
+  markdownLinkDelimiter = { fg = c.grey },
+  markdownLinkText = { fg = c.red },
+  markdownLinkTextDelimiter = { fg = c.grey },
+  markdownListMarker = { fg = c.red },
+  markdownOrderedListMarker = { fg = c.red },
+  markdownRule = { fg = c.purple },
   markdownUrl = { fg = c.blue, fmt = "underline" },
-  markdownUrlDelimiter = colors.Grey,
-  markdownUrlTitleDelimiter = colors.Green
+  markdownUrlDelimiter = { fg = c.grey },
+  markdownUrlTitleDelimiter = { fg = c.green },
 }
 
 return M

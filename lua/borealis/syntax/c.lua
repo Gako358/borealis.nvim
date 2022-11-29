@@ -1,15 +1,15 @@
 local M = {}
-local colors = require('borealis.config').colors
+local c = require("borealis.colors").select_colors()
 
 M.highlights = {
-  cInclude = colors.Blue,
-  cStorageClass = colors.Purple,
-  cTypedef = colors.Purple,
-  cDefine = colors.Cyan,
-  cTSInclude = colors.Blue,
-  cTSConstant = colors.Cyan,
-  cTSConstMacro = colors.Purple,
-  cTSOperator = colors.Purple,
+  cInclude = { fg = c.blue },
+  cStorageClass = { fg = c.purple },
+  cTypedef = { fg = c.purple },
+  cDefine = { fg = c.cyan },
+  cTSInclude = { fg = c.blue },
+  cTSConstant = { fg = c.cyan },
+  cTSConstMacro = { fg = c.purple },
+  cTSOperator = { fg = c.purple },
 }
 
 return M

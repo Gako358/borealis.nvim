@@ -1,16 +1,15 @@
 local M = {}
-local c = require('borealis.colors')
-local colors = require('borealis.config').colors
+local c = require("borealis.colors").select_colors()
 
 M.highlights = {
-  TelescopeBorder = colors.Red,
-  TelescopePromptBorder = colors.Cyan,
-  TelescopeResultsBorder = colors.Cyan,
-  TelescopePreviewBorder = colors.Cyan,
+  TelescopeBorder = { fg = c.red },
+  TelescopePromptBorder = { fg = c.cyan },
+  TelescopeResultsBorder = { fg = c.cyan },
+  TelescopePreviewBorder = { fg = c.cyan },
   TelescopeMatching = { fg = c.orange, fmt = "bold" },
-  TelescopePromptPrefix = colors.Green,
+  TelescopePromptPrefix = { fg = c.green },
   TelescopeSelection = { bg = c.bg2 },
-  TelescopeSelectionCaret = colors.Yellow
+  TelescopeSelectionCaret = { fg = c.yellow },
 }
 
 return M

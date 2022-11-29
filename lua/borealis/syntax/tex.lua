@@ -1,27 +1,25 @@
 local M = {}
-local c = require('borealis.colors')
-local colors = require('borealis.config').colors
-local cfg = vim.g.borealis_config
+local c = require("borealis.colors").select_colors()
 
 M.highlights = {
-  latexTSInclude         = colors.Blue,
-  latexTSFuncMacro       = { fg = c.fg, fmt = cfg.code_style.functions },
+  latexTSInclude         = { fg = c.blue },
+  latexTSFuncMacro       = { fg = c.fg, fmt = "italic" },
   latexTSEnvironment     = { fg = c.cyan, fmt = "bold" },
-  latexTSEnvironmentName = colors.Yellow,
-  texCmdEnv              = colors.Cyan,
-  texEnvArgName          = colors.Yellow,
-  latexTSTitle           = colors.Green,
-  latexTSType            = colors.Blue,
-  latexTSMath            = colors.Orange,
-  texMathZoneX           = colors.Orange,
-  texMathZoneXX          = colors.Orange,
-  texMathDelimZone       = colors.LightGrey,
-  texMathDelim           = colors.Purple,
-  texMathOper            = colors.Red,
-  texCmd                 = colors.Purple,
-  texCmdPart             = colors.Blue,
-  texCmdPackage          = colors.Blue,
-  texPgfType             = colors.Yellow,
+  latexTSEnvironmentName = { fg = c.yellow, fmt = "bold" },
+  texCmdEnv              = { fg = c.cyan },
+  texEnvArgName          = { fg = c.yellow },
+  latexTSTitle           = { fg = c.green },
+  latexTSType            = { fg = c.blue },
+  latexTSMath            = { fg = c.orange },
+  texMathZoneX           = { fg = c.orange },
+  texMathZoneXX          = { fg = c.orange },
+  texMathDelimZone       = { fg = c.light_grey },
+  texMathDelim           = { fg = c.purple },
+  texMathOper            = { fg = c.red },
+  texCmd                 = { fg = c.purple },
+  texCmdPart             = { fg = c.blue },
+  texCmdPackage          = { fg = c.blue },
+  texPgfType             = { fg = c.yellow },
 }
 
 return M

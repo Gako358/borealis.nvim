@@ -1,13 +1,12 @@
 local M = {}
-local c = require('borealis.colors')
-local colors = require('borealis.config').colors
+local c = require("borealis.colors").select_colors()
 
 M.highlights = {
-  CmpItemAbbr = colors.Fg,
+  CmpItemAbbr = { fg = c.fg },
   CmpItemAbbrDeprecated = { fg = c.light_grey, fmt = "strikethrough" },
-  CmpItemAbbrMatch = colors.Cyan,
+  CmpItemAbbrMatch = { fg = c.cyan, fmt = "bold" },
   CmpItemAbbrMatchFuzzy = { fg = c.cyan, fmt = "underline" },
-  CmpItemMenu = colors.LightGrey,
+  CmpItemMenu = { fg = c.light_grey },
   CmpItemKind = { fg = c.purple },
 }
 
