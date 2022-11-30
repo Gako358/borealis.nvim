@@ -10,7 +10,7 @@ local colors = {
   yellow = c.yellow,
 }
 
-local borealis = {
+local borealis_sl = {
   normal = {
     a = { bg = colors.blue, fg = colors.bg, gui = "bold" },
     b = { bg = colors.bg, fg = colors.fg },
@@ -48,4 +48,4 @@ local borealis = {
   },
 }
 
-return borealis;
+return borealis_sl;
