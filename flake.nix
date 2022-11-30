@@ -63,12 +63,10 @@
                 show_current_context_start = true,
             }
             require("nvim-tree").setup()
-
-            local borealis_theme = require("lualine.themes.borealis")
             require('lualine').setup {
               options = {
                 icons_enabled = true,
-                theme = borealis_theme,
+                theme = require("lualine.themes.borealis"),
                 component_separators = { left = '', right = ''},
                 section_separators = { left = '', right = ''},
                 disabled_filetypes = {

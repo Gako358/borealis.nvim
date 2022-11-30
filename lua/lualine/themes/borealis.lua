@@ -1,13 +1,12 @@
-local c = require("borealis.colors").select_colors()
 local colors = {
-  bg = c.bg0,
-  fg = c.fg,
-  grey = c.grey,
-  red = c.red,
-  blue = c.blue,
-  purple = c.purple,
-  green = c.green,
-  yellow = c.yellow,
+  bg = "#262626",
+  fg = "#d4d4d4",
+  grey = "#5c6370",
+  red = "#ee5d43",
+  blue = "#7cb7ff",
+  purple = "#ff00aa",
+  green = "#96e072",
+  yellow = "#ffe66d",
 }
 
 local borealis_sl = {
