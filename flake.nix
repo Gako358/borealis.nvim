@@ -43,6 +43,7 @@
               indent-blankline-nvim
               lightspeed-nvim
               nvim-tree-lua
+              lualine-nvim
             ];
           };
           customRC = ''
@@ -62,6 +63,13 @@
                 show_current_context_start = true,
             }
             require("nvim-tree").setup()
+
+            local borealis_theme = require("lualine.themes.borealis")
+            require("lualine").setup {
+              options = {
+                theme = borealis_theme,
+              },
+            }
             EOF
           '';
         };
