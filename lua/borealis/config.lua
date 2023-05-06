@@ -21,7 +21,7 @@ end
 
 M.default_config = {
   style = "dark",
-  toggle_style = "<c-t>",
+  toggle_style = "<c-s>",
 
   code_style = {
     comments = "italic",
