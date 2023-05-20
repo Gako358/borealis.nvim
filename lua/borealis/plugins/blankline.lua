@@ -1,7 +1,6 @@
 local M = {}
 local c = require("borealis.colors").select_colors()
 
-
 M.highlights = {
   IndentBlankLineIndent1 = { fg = c.blue },
   IndentBlankLineIndent2 = { fg = c.green },
