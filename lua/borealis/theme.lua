@@ -43,6 +43,7 @@ hl.common = {
   ErrorMsg = { fg = c.red, fmt = "bold" },
   WarningMsg = { fg = c.yellow, fmt = "bold" },
   MoreMsg = { fg = c.blue, fmt = "bold" },
+  CurSearch = { fg = c.bg0, bg = c.yellow },
   IncSearch = { fg = c.bg0, bg = c.orange },
   Search = { fg = c.bg0, bg = c.yellow },
   Substitute = { fg = c.bg0, bg = c.green },
@@ -143,7 +144,7 @@ hl.treesitter = {
   ["@none"] = { fg = c.fg },
   ["@number"] = { fg = c.orange },
   ["@operator"] = { fg = c.fg },
-  ["@parameter"] = { fg = c.red },
+  ["@parameter"] = { fg = c.orange },
   ["@parameter.reference"] = { fg = c.fg },
   ["@property"] = { fg = c.cyan },
   ["@punctuation.delimiter"] = { fg = c.light_grey },
@@ -166,8 +167,10 @@ hl.treesitter = {
   ["@text.uri"] = { fg = c.cyan, fmt = 'underline' },
   ["@text.math"] = { fg = c.fg },
   ["@text.reference"] = { fg = c.blue },
-  ["@text.enviroment"] = { fg = c.fg },
-  ["@text.enviroment.name"] = { fg = c.fg },
+  ["@text.environment"] = { fg = c.fg },
+  ["@text.environment.name"] = { fg = c.fg },
+  ["@text.diff.add"] = c.green,
+  ["@text.diff.delete"] = c.red,
   ["@note"] = { fg = c.fg },
   ["@warning"] = { fg = c.fg },
   ["@danger"] = { fg = c.fg },
@@ -177,20 +180,48 @@ hl.treesitter = {
   ["@variable.builtin"] = { fg = c.red, fmt = cfg.code_style.variables },
 }
 
+hl.lsp = {
+  ["@lsp.type.comment"] = hl.treesitter[ "@comment"],
+  ["@lsp.type.enum"] = hl.treesitter["@type"],
+  ["@lsp.type.enumMember"] = hl.treesitter["@constant.builtin"],
+  ["@lsp.type.interface"] = hl.treesitter["@type"],
+  ["@lsp.type.typeParameter"] = hl.treesitter["@type"],
+  ["@lsp.type.keyword"] = hl.treesitter["@keyword"],
+  ["@lsp.type.namespace"] = hl.treesitter["@namespace"],
+  ["@lsp.type.parameter"] = hl.treesitter["@parameter"],
+  ["@lsp.type.property"] = hl.treesitter["@property"],
+  ["@lsp.type.variable"] = hl.treesitter["@variable"],
+  ["@lsp.type.macro"] = hl.treesitter["@function.macro"],
+  ["@lsp.type.method"] = hl.treesitter["@method"],
+  ["@lsp.type.number"] = hl.treesitter["@number"],
+  ["@lsp.type.generic"] = hl.treesitter["@text"],
+  ["@lsp.type.builtinType"] = hl.treesitter["@type.builtin"],
+  ["@lsp.typemod.method.defaultLibrary"] = hl.treesitter["@function"],
+  ["@lsp.typemod.function.defaultLibrary"] = hl.treesitter["@function"],
+  ["@lsp.typemod.operator.injected"] = hl.treesitter["@operator"],
+  ["@lsp.typemod.string.injected"] = hl.treesitter["@string"],
+  ["@lsp.typemod.variable.defaultLibrary"] = hl.treesitter["@variable.builtin"],
+  ["@lsp.typemod.variable.injected"] = hl.treesitter["@variable"],
+}
+
 hl.plugins.blankline = require("borealis.plugins.blankline").highlights
 hl.plugins.bufferline = require("borealis.plugins.bufferline").highlights
 hl.plugins.cmp = require("borealis.plugins.cmp").highlights
 hl.plugins.gitsigns = require("borealis.plugins.gitsigns").highlights
 hl.plugins.lightspeed = require("borealis.plugins.lightspeed").highlights
 hl.plugins.lsp = require("borealis.plugins.lsp").highlights
+hl.plugins.noice = require("borealis.plugins.noice").highlights
 hl.plugins.nvimtree = require("borealis.plugins.nvimtree").highlights
+hl.plugins.saga = require("borealis.plugins.saga").highlights
 hl.plugins.telescope = require("borealis.plugins.telescope").highlights
+hl.plugins.trouble = require("borealis.plugins.trouble").highlights
 hl.plugins.whichkey = require("borealis.plugins.whichkey").highlights
 
 hl.langs.c = require("borealis.syntax.c").highlights
 hl.langs.cpp = require("borealis.syntax.cpp").highlights
 hl.langs.lua = require("borealis.syntax.lua").highlights
 hl.langs.markdown = require("borealis.syntax.markdown").highlights
+hl.langs.scala = require("borealis.syntax.scala").highlights
 hl.langs.tex = require("borealis.syntax.tex").highlights
 hl.langs.vim = require("borealis.syntax.vim").highlights
 
@@ -240,6 +271,7 @@ function M.setup()
   vim_highlights(hl.common)
   vim_highlights(hl.syntax)
   vim_highlights(hl.treesitter)
+  vim_highlights(hl.lsp)
 
   -- plugins
   for _, group in pairs(hl.langs) do vim_highlights(group) end
