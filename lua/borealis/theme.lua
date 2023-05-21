@@ -177,7 +177,7 @@ hl.treesitter = {
     ["@danger"] = {fg = c.fg},
     ["@type"] = {fg = c.yellow},
     ["@type.builtin"] = {fg = c.orange},
-    ["@variable"] = {fg = c.fg2, fmt = cfg.code_style.variables},
+    ["@variable"] = {fg = c.red2, fmt = cfg.code_style.variables},
     ["@variable.builtin"] = {fg = c.red, fmt = cfg.code_style.variables}
 }
 
