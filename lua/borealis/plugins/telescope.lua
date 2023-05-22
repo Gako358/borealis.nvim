@@ -8,7 +8,7 @@ M.highlights = {
     TelescopePreviewBorder = {fg = c.cyan},
     TelescopeMatching = {fg = c.orange, fmt = "bold"},
     TelescopePromptPrefix = {fg = c.green},
-    TelescopeSelection = {bg = c.bg1},
+    TelescopeSelection = {bg = c.bg2},
     TelescopeSelectionCaret = {fg = c.yellow}
 }
 
