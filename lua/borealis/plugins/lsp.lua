@@ -29,9 +29,9 @@ M.highlights = {
     DiagnosticUnderlineInfo = {fmt = "underline", sp = c.blue},
     DiagnosticUnderlineWarn = {fmt = "underline", sp = c.yellow},
 
-    LspReferenceText = {bg = c.bg1},
-    LspReferenceWrite = {bg = c.bg1},
-    LspReferenceRead = {bg = c.bg1},
+    LspReferenceText = {bg = c.bg2},
+    LspReferenceWrite = {bg = c.bg2},
+    LspReferenceRead = {bg = c.bg2},
 
     LspCodeLens = {fg = c.grey, fmt = cfg.code_style.comments},
     LspCodeLensSeparator = {fg = c.grey}
