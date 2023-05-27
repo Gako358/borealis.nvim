@@ -15,7 +15,7 @@ end
 
 hl.common = {
     Normal = {fg = c.fg, bg = c.bg0},
-    Terminal = {fg = c.fg, bg = c.bg0},
+    Terminal = {fg = c.fg, bg = c.bg1},
     EndOfBuffer = {fg = c.bg0, bg = c.bg0},
     FoldColumn = {fg = c.fg, bg = c.bg1},
     Folded = {fg = c.fg, bg = c.bg1},
@@ -27,7 +27,7 @@ hl.common = {
     lCursor = {fmt = "reverse"},
     CursorIM = {fmt = "reverse"},
     CursorColumn = {bg = c.bg1},
-    CursorLine = {bg = c.bg1},
+    CursorLine = {bg = c.bg3},
     ColorColumn = {bg = c.bg1},
     CursorLineNr = {fg = c.fg},
     LineNr = {fg = c.grey},
@@ -52,8 +52,8 @@ hl.common = {
     NonText = {fg = c.grey},
     Whitespace = {fg = c.grey},
     SpecialKey = {fg = c.grey},
-    Pmenu = {fg = c.fg, bg = c.bg1},
-    PmenuSbar = {fg = c.none, bg = c.bg1},
+    Pmenu = {fg = c.fg, bg = c.bg3},
+    PmenuSbar = {fg = c.none, bg = c.bg3},
     PmenuSel = {fg = c.bg0, bg = c.blue},
     WildMenu = {fg = c.bg0, bg = c.blue},
     PmenuThumb = {fg = c.none, bg = c.grey},
@@ -78,7 +78,7 @@ hl.common = {
     debugBreakpoint = {fg = c.bg0, bg = c.red},
     ToolbarButton = {fg = c.bg0, bg = c.blue},
     FloatBorder = {fg = c.grey, bg = c.bg1},
-    NormalFloat = {fg = c.fg, bg = c.bg1}
+    NormalFloat = {fg = c.fg, bg = c.bg3}
 }
 
 hl.syntax = {
