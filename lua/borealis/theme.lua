@@ -69,7 +69,7 @@ hl.common = {
     TabLine = {fg = c.fg, bg = c.bg1},
     TabLineFill = {fg = c.grey, bg = c.bg1},
     TabLineSel = {fg = c.bg0, bg = c.fg},
-    VertSplit = {fg = c.bg1},
+    VertSplit = {fg = c.bg2},
     Visual = {bg = c.bg2},
     VisualNOS = {fg = c.none, bg = c.bg2, fmt = "underline"},
     QuickFixLine = {fg = c.blue, fmt = "underline"},
