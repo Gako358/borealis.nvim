@@ -6,7 +6,7 @@ Table of Contents                                 *borealis-table-of-contents*
 1. borealis                                                |borealis-borealis|
   - Installation                                       |borealis-installation|
   - Load                                                       |borealis-load|
-  - Features                                               |borealis-features|
+  - Key Features                                       |borealis-key-features|
   - Plugins supported                             |borealis-plugins-supported|
 
 ==============================================================================
@@ -36,7 +36,7 @@ LOAD                                                           *borealis-load*
 <
 
 
-FEATURES                                                   *borealis-features*
+KEY FEATURES                                           *borealis-key-features*
 
 
 - ☒ Support for bufferline
@@ -44,6 +44,8 @@ FEATURES                                                   *borealis-features*
 - ☒ Support for lightspeed motions
 - ☐ Color adjustment, and more support to differernt languages
     - ☐ Rust
+    - ☐ java
+    - ☒ scala
     - ☐ Python
     - ☐ Typescript
 - ☐ Better support for nvim-tree
@@ -57,9 +59,12 @@ PLUGINS SUPPORTED                                 *borealis-plugins-supported*
 - Indent Blankline <https://github.com/lukas-reineke/indent-blankline.nvim/>
 - Lightspeed <https://github.com/ggandor/lightspeed.nvim>
 - |LSPDiagnostics|
+- Noice <https://github.com/folke/noice.nvim>
 - NvimTree <https://github.com/kyazdani42/nvim-tree.lua>
+- Saga <https://github.com/nvimdev/lspsaga.nvim>
 - TreeSitter <https://github.com/nvim-treesitter/nvim-treesitter>
 - Telescope <https://github.com/nvim-telescope/telescope.nvim>
+- Trouble <https://github.com/folke/trouble.nvim>
 - WhichKey <https://github.com/folke/which-key.nvim>
 
 
