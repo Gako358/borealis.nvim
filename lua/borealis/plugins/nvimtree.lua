@@ -2,9 +2,9 @@ local M = {}
 local c = require("borealis.colors").select_colors()
 
 M.highlights = {
-    NvimTreeNormal = {fg = c.fg, bg = c.bg3},
-    NvimTreeVertSplit = {fg = c.bg1, bg = c.bg3},
-    NvimTreeEndOfBuffer = {fg = c.bg1, bg = c.bg3},
+    NvimTreeNormal = {fg = c.fg, bg = c.bg1},
+    NvimTreeVertSplit = {fg = c.bg1, bg = c.bg1},
+    NvimTreeEndOfBuffer = {fg = c.bg1, bg = c.bg1},
     NvimTreeRootFolder = {fg = c.orange, fmt = "bold"},
     NvimTreeGitDirty = {fg = c.yellow},
     NvimTreeGitNew = {fg = c.green},
