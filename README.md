@@ -18,7 +18,7 @@ use 'gako358/borealis.nvim'
 require('borealis').load()
 ```
 
-## Features
+## Key Features
 
 - [x] Support for bufferline
 - [ ] Support for lazygit
