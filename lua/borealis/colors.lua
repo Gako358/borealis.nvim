@@ -7,6 +7,7 @@ local colors = {
         bg2 = "#3b3f4c", -- # Statusline background
         bg3 = "#2b303b", -- # nvim tree, terminal and telescope background
         fg = "#abb2bf", -- # Main foreground
+        ui = "#DCD7BA", -- # UI elements like line numbers, statusline etc.
         purple = "#c678dd",
         green = "#96E072",
         orange = "#f39c12",
@@ -24,9 +25,7 @@ local colors = {
         diff_add = "#31392b",
         diff_delete = "#382b2c",
         diff_change = "#1c3448",
-        diff_text = "#2c5372",
-        strings = "#98BB6C",
-        comments = "#5c6370"
+        diff_text = "#2c5372"
     },
     light = {
         black = "#101012",
@@ -35,6 +34,7 @@ local colors = {
         bg2 = "#e0e0e0",
         bg3 = "#d0d0d0",
         fg = "#383a42",
+        ui = "#383a42",
         purple = "#a626a4",
         green = "#50a14f",
         orange = "#c18401",
@@ -52,9 +52,7 @@ local colors = {
         diff_add = "#e2fbe4",
         diff_delete = "#fce2e5",
         diff_change = "#e2ecfb",
-        diff_text = "#cad3e0",
-        strings = "#a0a1a7",
-        comments = "#a0a1a7"
+        diff_text = "#cad3e0"
     }
 }
 

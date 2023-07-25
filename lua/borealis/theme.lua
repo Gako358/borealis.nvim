@@ -144,9 +144,9 @@ hl.treesitter = {
     ["@namespace"] = {fg = c.yellow},
     ["@none"] = {fg = c.fg},
     ["@number"] = {fg = c.orange},
-    ["@operator"] = {fg = c.fg},
+    ["@operator"] = {fg = c.ui},
     ["@parameter"] = {fg = c.red},
-    ["@parameter.reference"] = {fg = c.fg},
+    ["@parameter.reference"] = {fg = c.ui},
     ["@preproc"] = {fg = c.purple},
     ["@property"] = {fg = c.cyan},
     ["@punctuation.delimiter"] = {fg = c.light_grey},
@@ -180,7 +180,7 @@ hl.treesitter = {
     ["@danger"] = {fg = c.fg},
     ["@type"] = {fg = c.yellow},
     ["@type.builtin"] = {fg = c.orange},
-    ["@variable"] = {fg = c.fg, fmt = cfg.code_style.variables},
+    ["@variable"] = {fg = c.ui, fmt = cfg.code_style.variables},
     ["@variable.builtin"] = {fg = c.red, fmt = cfg.code_style.variables}
 }
 
