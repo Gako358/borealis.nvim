@@ -112,8 +112,8 @@ hl.syntax = {
     Title = {fg = c.cyan},
     Tag = {fg = c.green},
     Delimiter = {fg = c.light_grey},
-    Comment = {fg = c.grey, fmt = cfg.code_style.comments},
-    SpecialComment = {fg = c.grey, fmt = cfg.code_style.comments},
+    Comment = {fg = c.comments, fmt = cfg.code_style.comments},
+    SpecialComment = {fg = c.strings, fmt = cfg.code_style.comments},
     Todo = {fg = c.red, fmt = cfg.code_style.comments}
 }
 
@@ -122,7 +122,7 @@ hl.treesitter = {
     ["@attribute"] = {fg = c.cyan},
     ["@boolean"] = {fg = c.orange},
     ["@character"] = {fg = c.orange},
-    ["@comment"] = {fg = c.grey, fmt = cfg.code_style.comments},
+    ["@comment"] = {fg = c.comments, fmt = cfg.code_style.comments},
     ["@conditional"] = {fg = c.purple, fmt = cfg.code_style.keywords},
     ["@constant"] = {fg = c.orange},
     ["@constant.builtin"] = {fg = c.orange},
@@ -145,19 +145,21 @@ hl.treesitter = {
     ["@none"] = {fg = c.fg},
     ["@number"] = {fg = c.orange},
     ["@operator"] = {fg = c.blue},
-    ["@parameter"] = {fg = c.orange},
+    ["@parameter"] = {fg = c.red},
     ["@parameter.reference"] = {fg = c.fg},
+    ["@preproc"] = {c.purple},
     ["@property"] = {fg = c.cyan},
     ["@punctuation.delimiter"] = {fg = c.light_grey},
     ["@punctuation.bracket"] = {fg = c.light_grey},
     ["@punctuation.special"] = {fg = c.red},
     ["@repeat"] = {fg = c.purple, fmt = cfg.code_style.keywords},
-    ["@string"] = {fg = c.green, fmt = cfg.code_style.strings},
+    ["@string"] = {fg = c.string, fmt = cfg.code_style.strings},
     ["@string.regex"] = {fg = c.orange, fmt = cfg.code_style.strings},
     ["@string.escape"] = {fg = c.red, fmt = cfg.code_style.strings},
     ["@symbol"] = {fg = c.cyan},
-    ["@tag"] = {fg = c.red},
+    ["@tag"] = {fg = c.purple},
     ["@tag.delimiter"] = {fg = c.red},
+    ["@tag.attribute"] = {c.yellow},
     ["@text"] = {fg = c.fg},
     ["@text.strong"] = {fg = c.fg, fmt = 'bold'},
     ["@text.emphasis"] = {fg = c.fg, fmt = 'italic'},
@@ -166,8 +168,9 @@ hl.treesitter = {
     ["@text.title"] = {fg = c.orange, fmt = 'bold'},
     ["@text.literal"] = {fg = c.green},
     ["@text.uri"] = {fg = c.cyan, fmt = 'underline'},
+    ["@text.todo"] = {fg = c.red, fmt = cfg.code_style.comments},
     ["@text.math"] = {fg = c.fg},
-    ["@text.reference"] = {fg = c.fg},
+    ["@text.reference"] = {c.blue},
     ["@text.environment"] = {fg = c.fg},
     ["@text.environment.name"] = {fg = c.fg},
     ["@text.diff.add"] = c.green,
@@ -202,7 +205,8 @@ hl.lsp = {
     ["@lsp.typemod.operator.injected"] = hl.treesitter["@operator"],
     ["@lsp.typemod.string.injected"] = hl.treesitter["@string"],
     ["@lsp.typemod.variable.defaultLibrary"] = hl.treesitter["@variable.builtin"],
-    ["@lsp.typemod.variable.injected"] = hl.treesitter["@variable"]
+    ["@lsp.typemod.variable.injected"] = hl.treesitter["@variable"],
+    ["@lsp.typemod.variable.static"] = hl.treesitter["@constant"]
 }
 
 hl.plugins.blankline = require("borealis.plugins.blankline").highlights
