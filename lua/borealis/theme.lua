@@ -144,7 +144,7 @@ hl.treesitter = {
     ["@namespace"] = {fg = c.yellow},
     ["@none"] = {fg = c.fg},
     ["@number"] = {fg = c.orange},
-    ["@operator"] = {fg = c.blue},
+    ["@operator"] = {fg = c.fg},
     ["@parameter"] = {fg = c.orange},
     ["@parameter.reference"] = {fg = c.fg},
     ["@preproc"] = {fg = c.purple},
