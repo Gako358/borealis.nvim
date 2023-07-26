@@ -53,7 +53,7 @@ local colors = {
         tags = "#7F94CA",                 -- # Tags highlighting (Steel Blue)
         text = "#98c379",                 -- # Text highlighting (Green)
         todo = "#e86671",                 -- # Todo highlighting (Red)
-        types = "FFE66D",                -- # Types (Light Yellow)
+        types = "#FFE66D",                -- # Types (Light Yellow)
         variables = "#DCD6BA"             -- # Variables (Beige)
     },
     light = {
