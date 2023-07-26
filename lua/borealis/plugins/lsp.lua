@@ -2,11 +2,6 @@ local M = {}
 local cfg = vim.g.borealis_config
 local c = require("borealis.colors").select_colors()
 
-local diagnostics_error_color = c.red
-local diagnostics_hint_color = c.purple
-local diagnostics_warn_color = c.yellow
-local diagnostics_info_color = c.cyan
-
 M.highlights = {
     LspCxxHlGroupEnumConstant = {fg = c.orange},
     LspCxxHlGroupMemberVariable = {fg = c.orange},
@@ -19,10 +14,10 @@ M.highlights = {
     DiagnosticInfo = {fg = c.cyan},
     DiagnosticWarn = {fg = c.yellow},
 
-    DiagnosticVirtualTextError = {bg = c.none, fg = diagnostics_error_color},
-    DiagnosticVirtualTextWarn = {bg = c.none, fg = diagnostics_warn_color},
-    DiagnosticVirtualTextInfo = {bg = c.none, fg = diagnostics_info_color},
-    DiagnosticVirtualTextHint = {bg = c.none, fg = diagnostics_hint_color},
+    DiagnosticVirtualTextError = {bg = c.none, fg = c.diagnostics_error},
+    DiagnosticVirtualTextWarn = {bg = c.none, fg = c.diagnostics_warn},
+    DiagnosticVirtualTextInfo = {bg = c.none, fg = c.diagnostics_info},
+    DiagnosticVirtualTextHint = {bg = c.none, fg = c.diagnostics_hint},
 
     DiagnosticUnderlineError = {fmt = "underline", sp = c.red},
     DiagnosticUnderlineHint = {fmt = "underline", sp = c.purple},
