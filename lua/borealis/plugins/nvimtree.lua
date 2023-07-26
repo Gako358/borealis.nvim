@@ -11,7 +11,7 @@ M.highlights = {
     NvimTreeGitDeleted = {fg = c.red},
     NvimTreeSpecialFile = {fg = c.yellow, fmt = "underline"},
     NvimTreeIndentMarker = {fg = c.fg},
-    NvimTreeImageFile = {fg = c.dark_purple},
+    NvimTreeImageFile = {fg = c.statements},
     NvimTreeSymlink = {fg = c.purple},
     NvimTreeFolderName = {fg = c.blue}
 }
