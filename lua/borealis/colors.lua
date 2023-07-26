@@ -47,13 +47,13 @@ local colors = {
         signals = "#D22C27",              -- # Alternate red for contrast (Firebrick)
         special = "#E45876",              -- # Special highlighting (Indian Red)
         statements = "#c678dd",           -- # Statements and Keywords (Medium Purple)
-        strings = "#98AB6C",              -- # Strings (Olive Green)
+        strings = "#98c379",              -- # Strings (Olive Green)
         structures = "#FFE66D",           -- # Structure highlighting (Yellow)
         substitute = "#86E072",           -- # Substitute highlighting (Yellow Green)
         tags = "#7F94CA",                 -- # Tags highlighting (Steel Blue)
         text = "#98c379",                 -- # Text highlighting (Green)
         todo = "#e86671",                 -- # Todo highlighting (Red)
-        types = "#e5c07b",                -- # Types (Light Yellow)
+        types = "FFE66D",                -- # Types (Light Yellow)
         variables = "#DCD6BA"             -- # Variables (Beige)
     },
     light = {
