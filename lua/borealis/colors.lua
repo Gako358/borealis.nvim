@@ -46,14 +46,14 @@ local colors = {
         selections = "#4387CF",           -- # Alternate blue for contrast (Steel Blue)
         signals = "#D22C27",              -- # Alternate red for contrast (Firebrick)
         special = "#E45876",              -- # Special highlighting (Indian Red)
-        statements = "#9577BB",           -- # Statements and Keywords (Medium Purple)
+        statements = "#c678dd",           -- # Statements and Keywords (Medium Purple)
         strings = "#98AB6C",              -- # Strings (Olive Green)
-        structures = "#7A8F9F",           -- # Structure highlighting (Cadet Blue)
+        structures = "#FFE66D",           -- # Structure highlighting (Yellow)
         substitute = "#86E072",           -- # Substitute highlighting (Yellow Green)
         tags = "#7F94CA",                 -- # Tags highlighting (Steel Blue)
         text = "#98c379",                 -- # Text highlighting (Green)
         todo = "#e86671",                 -- # Todo highlighting (Red)
-        types = "#FFE66D",                -- # Types (Light Yellow)
+        types = "#e5c07b",                -- # Types (Light Yellow)
         variables = "#DCD6BA"             -- # Variables (Beige)
     },
     light = {
