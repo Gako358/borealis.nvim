@@ -5,7 +5,7 @@ M.highlights = {
   LightspeedGreyWash = { fg = c.grey },
   LightspeedLabel = { fg = c.purple, fmt = "bold,underline" },
   LightspeedLabelDistant = { fg = c.green, fmt = "bold,underline" },
-  LightspeedLabelDistantOverlapped = { fg = c.light_green, fmt = "underline" },
+  LightspeedLabelDistantOverlapped = { fg = c.dark_green, fmt = "underline" },
   LightspeedLabelOverlapped = { fg = c.purple, fmt = "underline" },
   LightspeedMaskedChar = { fg = c.orange },
   LightspeedOneCharMatch = { bg = c.purple, fg = c.fg, fmt = "bold" },
