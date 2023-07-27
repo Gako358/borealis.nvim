@@ -14,10 +14,10 @@ M.highlights = {
     DiagnosticInfo = {fg = c.cyan},
     DiagnosticWarn = {fg = c.yellow},
 
-    DiagnosticVirtualTextError = {bg = c.none, fg = c.diagnostics_error},
-    DiagnosticVirtualTextWarn = {bg = c.none, fg = c.diagnostics_warn},
-    DiagnosticVirtualTextInfo = {bg = c.none, fg = c.diagnostics_info},
-    DiagnosticVirtualTextHint = {bg = c.none, fg = c.diagnostics_hint},
+    DiagnosticVirtualTextError = {bg = c.none, fg = c.light_red},
+    DiagnosticVirtualTextWarn = {bg = c.none, fg = c.orange},
+    DiagnosticVirtualTextInfo = {bg = c.none, fg = c.bright_blue},
+    DiagnosticVirtualTextHint = {bg = c.none, fg = c.bright_yellow},
 
     DiagnosticUnderlineError = {fmt = "underline", sp = c.red},
     DiagnosticUnderlineHint = {fmt = "underline", sp = c.purple},
