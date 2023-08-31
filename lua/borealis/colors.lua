@@ -18,12 +18,12 @@ local colors = {
         dark_red = "#E45876",           -- # Special, Gid diff delete background, errors, exceptions
 		dark_yellow = "#FFA066",        -- # Constants, imports, booleans
         grey = "#5c6370",
-		green = "#98c379",              -- # Strings, texts, diff changes
+		green = "#96E072",              -- # Strings, texts, diff changes
         light_grey = "#808b98",
         orange = "#FF8E3B",             -- # Warnings, diagnostic warnings
-        purple = "#c678dd",             -- # Statements and Keywords
+        purple = "#c74ded",             -- # Statements and Keywords
 		red = "#e86671",                -- # Identifiers, LSP variables, Todos, Numbers
-        yellow = "#ffc76d"              -- # Operators, RegEx, questions
+        yellow = "#FFE66D"              -- # Operators, RegEx, questions
     },
     light = {
         fg = "#383a42",                 -- Main foreground
